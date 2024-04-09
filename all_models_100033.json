@@ -1,0 +1,2677 @@
+{
+    "models": [
+        {
+            "model": {
+                "model_uuid": "d744d41cb00a4de6be1109f40d964604",
+                "model_name": "现代风民宿景观",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/2a76254e6ea04312b1d341ac50a5ac23/9e91d37c98c521f2a53dbea5de2e0962480214ae0236fd0bbbc459c773a03709.safetensors",
+                        "version_file_name": "民宿.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/2a76254e6ea04312b1d341ac50a5ac23/8a33cc394d0a53601e99f14c8ae8d3d5e093cd46d4780284fa43677019b8342f.png",
+                        "version_name": "v1.1",
+                        "version_download_count": 84,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/2a76254e6ea04312b1d341ac50a5ac23/138bed4b7c8e02b23efb00f32f8e18ee53894fa0529259a61ace4c7897eb2c04.safetensors",
+                        "version_file_name": "lora.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/2a76254e6ea04312b1d341ac50a5ac23/b3e6a14de85aca1a458f90c451df67dabfe194ff0afc1c5c395561939d2aa176.png",
+                        "version_name": "v1",
+                        "version_download_count": 376,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "b84bd2033d024fd6ab0d77e9e9f3e228",
+                "model_name": "图书馆 室外",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/2319bb6d5ff641a3a26dbfc4ebe1c5aa/c3ddd304a840056f6a519e9ae10a382d65e2cffe00e0b33b17fb9539fd63f646.safetensors",
+                        "version_file_name": "library-000014.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/2319bb6d5ff641a3a26dbfc4ebe1c5aa/f8acc526928e789795692f6554f629066bba3ea1f9b8ff95fb156e21edf3bcc9.png",
+                        "version_name": "v1",
+                        "version_download_count": 206,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "7c76296668784451a483cbbeaabc0b27",
+                "model_name": "超流线建筑",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/dc7a6f9067dd4ccea3b65f32e7c926da/aa296b8046ab8b93126f9e107983034e81a3af1d07455ce5a7a9ac5abb1ca457.safetensors",
+                        "version_file_name": "Superfluid_Mix.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/dc7a6f9067dd4ccea3b65f32e7c926da/fd0cf49bf97a8e163cdabf3462ab3fb0402c1bbd9d90c7eb337dae3bda658667.jpg",
+                        "version_name": "Mix_v2.0",
+                        "version_download_count": 118,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/dc7a6f9067dd4ccea3b65f32e7c926da/2e9abd926c3b7765d50e150c0b0890aeabaa92a2360dd6e68ae7e290c762387a.safetensors",
+                        "version_file_name": "Superfluid_v1.2.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/dc7a6f9067dd4ccea3b65f32e7c926da/094d25e998a3cfa7111a560fa171b67724908150abd8fdcae568dd9e6216b982.jpg",
+                        "version_name": "Base_v1.0",
+                        "version_download_count": 333,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "b3487f14ade24f65bf942382fe1a43ea",
+                "model_name": "SDXL通用室内设计MAX",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/058dcd7035a76a307239b84535e3c313/9e7e4248c0c49725339192da900c15f894f5105cc4b8cf90c540863b75f1a634.safetensors",
+                        "version_file_name": "SDXL通用室内设计MAX_v1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/058dcd7035a76a307239b84535e3c313/ec1f01463ff04ee4f4c9f8a0da8ab6f82f473b47c618700cfc13a51ddecc614b.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 1529,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "ead5b4c18d2f487c8b9e0fc40e7c01c0",
+                "model_name": "城市风格 | 建筑夜景",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8cc5754629434148a9f5a73f86867783/20240402-1712065037692-0006.safetensors",
+                        "version_file_name": "20240402-1712065037692-0006",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/21eeb3e0893a4a3280deb18069de01f7/a2fb19077630ee7bc5cc373017e41ceca4b93380de60397df04c18f6c5b4fea9.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 140,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "6b09781c57e94257b7315ab9f8b35f16",
+                "model_name": "4s店室外模型",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/2319bb6d5ff641a3a26dbfc4ebe1c5aa/68af832a43a29c804564fb30ce0a7be3c11e3c18e82bdeba06f021d2bfea506f.safetensors",
+                        "version_file_name": "4ssss.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/2319bb6d5ff641a3a26dbfc4ebe1c5aa/8ffc72c1cde813baea5cf5f5c354f089878be1bcf70d32f2fda45cf418ea3ea2.png",
+                        "version_name": "v1",
+                        "version_download_count": 140,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "57937abd92bf4b25b0b3cf9b9210c578",
+                "model_name": "图书馆室内",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/2319bb6d5ff641a3a26dbfc4ebe1c5aa/b80b4c47c3a99094ef0fb7d49137a0d361c3a661b01bb27eb9994ba7e7a29cc4.safetensors",
+                        "version_file_name": "Library_20240403165236.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/2319bb6d5ff641a3a26dbfc4ebe1c5aa/7331091414354a67ea55196092c821148a599931cffd7b64bd541a7d8db6bbef.png",
+                        "version_name": "v1",
+                        "version_download_count": 226,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "579c662fae6549029d8e6bd22a073baf",
+                "model_name": "简约住宅丨原木白墙丨住宅系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/47b78195716b8f0c35f2f7453d688218059b5d585d2d7793da9586fa7db36fca.safetensors",
+                        "version_file_name": "20240331-1711878240953-0012.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/0c961dd9abb56b495c440735f7b71fd518683094468a6e03f00ab2d4171b77f6.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 232,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c689dcbaaed1474a873000fa22e21eea",
+                "model_name": "通用城市建筑设计MAX",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/058dcd7035a76a307239b84535e3c313/3fee2514c808b6e9dc811280d2e488b1ff21bcaf7ce79a06a981a0c6f92dc37a.safetensors",
+                        "version_file_name": "通用城市建筑设计MAX_v1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/058dcd7035a76a307239b84535e3c313/4e933ef2d6e585d527d9a9c146dd33d61e29299a40cde7927f26d3f0beea1bd8.jpg",
+                        "version_name": "v1.0",
+                        "version_download_count": 1076,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "f3a508bda51a4d8ebca37269394269a6",
+                "model_name": "藏式建筑",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/2319bb6d5ff641a3a26dbfc4ebe1c5aa/2c7408efdd45ed7b009417626cce6b9e1e0a81e83fccfd9d69f3168f78082ae1.safetensors",
+                        "version_file_name": "xizang-000008.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/2319bb6d5ff641a3a26dbfc4ebe1c5aa/a55386af0467a5c24952706356429795a21a62d2bfd87738536ae35382a22099.png",
+                        "version_name": "v1住宅民宿",
+                        "version_download_count": 81,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "5ffaa794a80d472eacc771c15ead4142",
+                "model_name": "景观别墅",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/ff602648138d4cd680ede7685bfc53d5/20240317-1710656622845-0010.safetensors",
+                        "version_file_name": "20240317-1710656622845-0002",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/f496f5523fe505c7592a64ad5f832ebd28274f82ef930553f001ccd9379c32a4.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 1069,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "bbaf858000b74cf38b4a0458d8f78c6c",
+                "model_name": "现代风格",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/f63dcbd6661149e899903793b7969c7c/37bea632fada78826e7bb5a67045d7179a3725f61ec819dd162e25b31ac06fad.safetensors",
+                        "version_file_name": "现代中式.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/f63dcbd6661149e899903793b7969c7c/10891d2aee13ea9e7a1bd0b2fe31ba32babe23b06abf8950057821b37acfe1d0.png",
+                        "version_name": "FX-Design",
+                        "version_download_count": 100,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "01cadcc7cdbe438592343c799ba9b17b",
+                "model_name": "QLCD-城市鸟瞰",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/69ab364c0be440cb811b7402ebac2b73/39e87a010514c8cc314d1ad7857dac8ddcb894831509d1620b88433085e6cfc1.safetensors",
+                        "version_file_name": "QLCD-城市鸟瞰.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/69ab364c0be440cb811b7402ebac2b73/6a4a82c240bce994585cadc13484ef73f03d51e1f704564400fd165818b18f18.png",
+                        "version_name": "V0.2",
+                        "version_download_count": 151,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "0617dc335f354c95881300468682109e",
+                "model_name": "现代中式丨室内风格丨工装系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/e9116baf9766466bdb0baf547abea903efb97f07cc2659d83c4c7f1c33063234.safetensors",
+                        "version_file_name": "20240325-1711345156566-0012.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/dd4c6c280a0333b46ad8eff4c63aa0c9df441566b195dcd13a1c9335c5b6ef3c.png",
+                        "version_name": "v3.0",
+                        "version_download_count": 300,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8681c2808e794263925522502a369cd8/20240201-1706768657103-0004.safetensors",
+                        "version_file_name": "20240201-1706768657103-0004",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/ae56cb2250e37a9054ca21bfbde6d2873fde4c6679975b538776cf00f479d7e5.png",
+                        "version_name": "现代中式v2.0",
+                        "version_download_count": 663,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/69f0dd3b91df417f9122bed187974122/20240201-1706752695432-0003.safetensors",
+                        "version_file_name": "20240201-1706752695432-0003",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/62780879c6719c4db15683eb197ef03daa4aeb0880de543677b0c54218b58f7f.png",
+                        "version_name": "现代中式v1.0",
+                        "version_download_count": 38,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "16cac12116564e0dbd591ce092b86b8e",
+                "model_name": "【ai摄影】电商室内场景",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a91f8526cc4543789edffe0fa97a2570/75ce5341a3abeb61945908f3912ebcb99bed18f83a18b2e9ec84c63af60b87c3.safetensors",
+                        "version_file_name": "SHINEIv2.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a91f8526cc4543789edffe0fa97a2570/e1c522abbc040a4f71eb4792401971f0a3e483c47bfe7bf53bf226392178de6c.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 780,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "31587ca386694e3baa0b29f18310a851",
+                "model_name": "室内彩平_interior plan",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8b7400a5961e4c1d898dbb74e98d4c17/636bfe18aa37c30785eb9c376429b34019f7cefc3849f8ad39de1d49e375c1e4.safetensors",
+                        "version_file_name": "室内彩平_interior plan.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/8b7400a5961e4c1d898dbb74e98d4c17/4293936b3e199f53c5546a0fe822ce651bca8c75ad843cf11fbf8d4c1f9f7d14.jpg",
+                        "version_name": "1.0",
+                        "version_download_count": 1426,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "5711314b9f004e4e8daff13ca2ba0cc8",
+                "model_name": "通用室内设计MAX",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/058dcd7035a76a307239b84535e3c313/353ca31c4a1d8baa482daad441ee5c6c0e69c414aebaa1b6d6a42f0be7c3478e.safetensors",
+                        "version_file_name": "通用室内设计MAX_v1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/058dcd7035a76a307239b84535e3c313/5d23997e3ddf37672505d27256e40d310c25d698daf313b9b793e2ffd2e02c51.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 295,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "225f920095da4e788b5313e02102181f",
+                "model_name": "黑色美学丨小型商建丨建筑系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/8f3aec9e5fe3d0b2b71aa0dd7b7bb739822c091ec4f602e9b3f738cc6dc3a9e4.safetensors",
+                        "version_file_name": "20240327-1711541853309-0012.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/b56ec2cf7835ac20b3b7fd26705dcefddf3e4a31a36fa629c0dfd50008e23ba4.png",
+                        "version_name": "v2.0 ",
+                        "version_download_count": 132,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/ff0550b92fab47e297f591677c614d83/20240323-1711171886776-0012.safetensors",
+                        "version_file_name": "20240323-1711171886776-0012",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/a1cf4742b573606237527e5d490df63ab64667f9da15357da7fbd41f8ac70bb1.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 27,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "1b4d413e0a4e4822a1e82fbedb61dffb",
+                "model_name": "spa水疗会所",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/2319bb6d5ff641a3a26dbfc4ebe1c5aa/7a3c011409535926f5a8725b7e52cd767bec44f67038db06e9f9b4eeab54c81d.safetensors",
+                        "version_file_name": "spa.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/2319bb6d5ff641a3a26dbfc4ebe1c5aa/36ebe22fd5bfcbb701d9b921895e64a96b7184a444f130eb986522bcd36f679a.png",
+                        "version_name": "v1",
+                        "version_download_count": 15,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "bdec65cb8bc44243a07b63324cea6a1e",
+                "model_name": "夯土材质丨商业空间丨工装系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/eea24b720ac747148b4e16378cc81abd/20240401-1711983413914-0014.safetensors",
+                        "version_file_name": "20240401-1711983413914-0014",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/00c94c53975d9fd8893440ef6cf577ab6d640d284d15fd46756aa3746d506776.png",
+                        "version_name": "v2.0",
+                        "version_download_count": 53,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/e7f68bb6eaaa4a39a05492e4d743e6aa/20240318-1710734652898-0014.safetensors",
+                        "version_file_name": "20240318-1710734652898-0014",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/1eefa90650689ead3262255bd99ea1b6ad1ed1c038466152ab4b492cd6a8e4ab.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 69,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "20b2f2e4db4747bea50c2004368f4943",
+                "model_name": "台地景观",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/3fba20858c38407d98808ac6964f8146/20240403-1712122543938-0002.safetensors",
+                        "version_file_name": "20240403-1712122543938-0002",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/2a76254e6ea04312b1d341ac50a5ac23/b1321e29c355432c8f209d7084d2e0dfe0ec747f723e9356aa5409a1e5228448.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 45,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "bb2fabef97e34d2f8e3b5cbd4719135d",
+                "model_name": "果酱景观_屋顶花园",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/69428715d8fd4713aff77ed97a3b73e4/5930848453e926c1dce64787b6008f6835aef3b32c83479a6868975ae6c829c5.safetensors",
+                        "version_file_name": "wuding-000004.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/69428715d8fd4713aff77ed97a3b73e4/7dcbf49fe11366a7f7079f8da404cd793f3059c0c381320ae85ea4a7392b1025.png",
+                        "version_name": "v0.5",
+                        "version_download_count": 36,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "fbda9a28071d49ac863824f86621650e",
+                "model_name": "现代轻奢&室内设计",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/e24cfbb59b4f4ed59a48bea62b16f3fb/20240325-1711368428154-0010.safetensors",
+                        "version_file_name": "20240325-1711368428154-0002",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/a04d6e1beaae3eab274bf9a2d4d72dd4d6d149db9cb830d5c50db3882d4e3248.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 100,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "9b4b41532f8849bd9ded24ff39ea42d9",
+                "model_name": "新国风餐饮店K",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/fa9bf36f0f55450eb5c058d608efea02/879a1963d82f246d3f39a973cb9be46e44d638718815c7a86029996d057b8527.safetensors",
+                        "version_file_name": "新国风餐厅K v0.1.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/fa9bf36f0f55450eb5c058d608efea02/4d1b6a8ad4be61dae3574dd49ac6b5e6bd3268800d1a739078225ef1b9bccb94.png",
+                        "version_name": "v0.1",
+                        "version_download_count": 46,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "470f8b497b684b3aa91a565ed650d01b",
+                "model_name": "摩登办公_office",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8b7400a5961e4c1d898dbb74e98d4c17/4efaae24fec7452f92fb908b2303e7dfcd531027b7d0b082800d4666c417fe63.safetensors",
+                        "version_file_name": "摩登办公_office.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/8b7400a5961e4c1d898dbb74e98d4c17/deb9e3b4eb5b781a495bee9b01ddbdcfaa90b38c8d77bdd1e172451365e813d0.png",
+                        "version_name": "1.0",
+                        "version_download_count": 147,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "9e54f552a4b7410a81e231ef8a73f47b",
+                "model_name": "维多利亚_蓝调_室内",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8b7400a5961e4c1d898dbb74e98d4c17/41304c474e3fe601a9f3391fc12cc0b3987b327d9cf30113edc054316da83b96.safetensors",
+                        "version_file_name": "维多利亚_style_v1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/8b7400a5961e4c1d898dbb74e98d4c17/996ff2fd0ffd5d7c9fda8f52c4b47357989a163085881b12b07446353c323082.png",
+                        "version_name": "1.0",
+                        "version_download_count": 38,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "d3a9cf40fb4c499bb78b8a6c0752a99a",
+                "model_name": "石材幕墙建筑",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/dc7a6f9067dd4ccea3b65f32e7c926da/aeaba1f06ba2e526190dd56e3643a3609486405d517052e9b711d80351742d63.safetensors",
+                        "version_file_name": "Dsg_Public_v1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/dc7a6f9067dd4ccea3b65f32e7c926da/f9eeb80b64d1886672fac8daf60ee5c13aa8b148247bc3b11d839efcb3567926.jpg",
+                        "version_name": "Dsg_Public_v1.0",
+                        "version_download_count": 116,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "072d2db592b0416487dec4ef4be2cd65",
+                "model_name": "yami-mjz-现代极简",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/7098874e4375473f88696547fc92decf/20240324-1711284540689-0001.safetensors",
+                        "version_file_name": "20240324-1711284540689-0001",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/0960a117036d409bb6a46d2b8a4ebcad/e7a9e4edd2f7621645030bd3319e477630219183c1f868d347b20e0d6c614dbf.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 70,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "9aa02ae508ae48acb92ddf1b7e0b656d",
+                "model_name": "公园景观14",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/bbda7f1170a04f68be9ee3c544f3e5fa/3afde0e56ac5dd9c92603cfd77b4b8000352ef44e246435696d8c33cbe075559.safetensors",
+                        "version_file_name": "景观公园.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/bbda7f1170a04f68be9ee3c544f3e5fa/5d4a4d5d08a44b25c8dfa9f6ce9ef618233f827d50256962a18490e341f1c98c.jpg",
+                        "version_name": "v2",
+                        "version_download_count": 1432,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/bbda7f1170a04f68be9ee3c544f3e5fa/4c7f2914f304506bcc7590caf920d677d439a9f6bce1cd41130155cdff06b813.safetensors",
+                        "version_file_name": "公园景观14.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/bbda7f1170a04f68be9ee3c544f3e5fa/99c07fd9e1d9ff354b38f2909455e0ece43263175f2eab95e7c9611f44eeb37d.jpg",
+                        "version_name": "v1",
+                        "version_download_count": 243,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "88261ef75500412b95090aabc2fedd94",
+                "model_name": "xxxxxw1.5tbyueji01",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/876973e4669f41678aef172793f2f8ab/9cfc2a3f30904858c1ed1d560b53819d8a5b881364ef1159601301e398fe122e.safetensors",
+                        "version_file_name": "xxxxxw1.5tbyueji01.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/876973e4669f41678aef172793f2f8ab/ad7240c0edebd66227b68f00a76a22558b541a32af7a1b1fac7d4b766def5601.png",
+                        "version_name": "藤本月季",
+                        "version_download_count": 72,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "fca96622ef074467b02f9c193ac59aa8",
+                "model_name": "现代景观庭院lora",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/657821e215b44634993b6864c6876f10/815559dd7d7b319505654ff2423fe01dd7c215811efe3200ee3b2794e37db37b.safetensors",
+                        "version_file_name": "现代景观庭院 .safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/657821e215b44634993b6864c6876f10/ddb274ef47a01e71ddd50401a57c0d077110cba48320b4c5d05392ce5f73b30f.png",
+                        "version_name": "1.0",
+                        "version_download_count": 1462,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "cd5f69b9485049cb81566df74d707638",
+                "model_name": "服装店",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/3d19337a28a24b34afbf2eb854aba95e55e8a9eedbb1622a982dcc1812782664.safetensors",
+                        "version_file_name": "20240402-1712036743238-0014.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/08f937bf6f67ddec9476bbe75754e1741a70d4a93d537ff790daf8b14f9f2ad9.png",
+                        "version_name": "V2.0",
+                        "version_download_count": 46,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/c2db58c4823c98af6959160444de2030ed64599a9c1f9457a218aaf4328c38d9.safetensors",
+                        "version_file_name": "服装店.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/6a9f12ce743a93a04694d2d54005a263aca006bc303d5f01993053606f2e162c.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 179,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "d56b402a8bf447b2b0365b209ebb2f30",
+                "model_name": "高挑前厅丨商场中庭丨工装系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/497a35ad1daac4bde093161dfab6352779ad82710fd7e3f9d2ca9926173da556.safetensors",
+                        "version_file_name": "20240306-1709712414565-0010.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/f9a224390ae664886bb9b2eb28384301176be8ce030de67e5444bb07fb6d638e.png",
+                        "version_name": "v2.0",
+                        "version_download_count": 220,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/555c46a17a7a4426bdbf858f38ef22da/20240126-1706264192311-0009.safetensors",
+                        "version_file_name": "20240126-1706264192311-0009",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/fb96e1237a1d0a3b6f562bf65268bbb21f0ee86c70282d574dd8c6c4ced368f3.png",
+                        "version_name": "工装前厅v1.0",
+                        "version_download_count": 7,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "6d2e850433b9414ab6a25098459ce6e7",
+                "model_name": "焦糖色调丨室内滤镜丨住宅系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/ead134e957ce4cf784c52ae52627b88b/20240304-1709532362021-0012.safetensors",
+                        "version_file_name": "20240304-1709532362021-0012",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/b95454d0ed8d7924a3949e6e1519777b6e26149973c96812ebe66ca9f35cc911.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 952,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "81853e6d071a4cbd8f99c892e383f24e",
+                "model_name": "综合体_wenhk",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a299586dd9684edebe0982865fc47e6f/14ba4648bf697c577642c1aa8766716c63e48c748f1b915431b1868d4d3d0fbe.safetensors",
+                        "version_file_name": "zongheti_wenhk.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a299586dd9684edebe0982865fc47e6f/1d068a274cf08c26ff608229865191735a7c7d27bc4271786833f5eb7355a5f9.png",
+                        "version_name": "v01",
+                        "version_download_count": 1281,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "0a31041a8ce94bc7a3279fb17b7d834c",
+                "model_name": "插图风建筑&概念设计",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/63dfc9cd627e459c838b949e622afbc3/20240307-1709776102628-0005.safetensors",
+                        "version_file_name": "20240307-1709776102628-0005",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/79911ac1af0a7b831b4ed4b954f54bfaacadd1fe8e4412ee5098efe665b460d3.jpg",
+                        "version_name": "v2.0",
+                        "version_download_count": 926,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "1df32b4215e146e0850155005acedb6d",
+                "model_name": "室内彩色平面图",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/f63dcbd6661149e899903793b7969c7c/71e7ce822b3d4049f2219309e9f9a065b2e3fccc2219b44b46c4c71c4d082a66.safetensors",
+                        "version_file_name": "室内彩色平面.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/f63dcbd6661149e899903793b7969c7c/aee608e7c2738dbae42c010acdf5abbf2d1d61c60513b5f13a3d6b5f86595c84.jpg",
+                        "version_name": "FX-Design",
+                        "version_download_count": 1508,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c574e81f9b5648819c06219b640f82cb",
+                "model_name": "doo-big分析图",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/eea538724c154a7e9ddc87580e801880/20240406-1712410911626-0011.safetensors",
+                        "version_file_name": "20240406-1712410911626-0011",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/4105a6be0a6e4527ba49f908038debbc/f85b1175f51fd924efbe1404e95558f0accab2d00d5280cbae5eb4f11c39fc3f.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 14,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/4105a6be0a6e4527ba49f908038debbc/db8036e9694601301bc0d5c904579fc8b72b7d852d4978ddaed6be3713486747.safetensors",
+                        "version_file_name": "20240407-1712502658122-0011.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/4105a6be0a6e4527ba49f908038debbc/52f2f3157499cecbaf7886df97bfae030c4eae5400cc5397eb610ece08d79d9d.png",
+                        "version_name": "v2.0",
+                        "version_download_count": 0,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "10d2822edfbb474880b6c7a65e8bb2c7",
+                "model_name": "竖线条&厂房，研发办公",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/5e0df958931f49009d6a4634b3764082/20240316-1710567649492-0010.safetensors",
+                        "version_file_name": "20240316-1710567649492-0002",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/323ce3c3d2136e82fc32fee4d0c57c0d5147afc69b5d057b9dc90ccc69e01052.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 350,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "2cb6d291948f4cb5958f159e5e89bddf",
+                "model_name": "AI辅助室内空间创作_极简色调/异性/诧寂风V1.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/d412c0d7d2814c3887963c5589798b96/7c3c2837475113647f28507ff5964bb626a25ea3fe363bbd993b91228efeacbf.safetensors",
+                        "version_file_name": "Wyundong-000008.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/d412c0d7d2814c3887963c5589798b96/21a779026a20e2bc80a1527251c246754cd149bf7b0a2a2f345acf786b48cdd5.gif",
+                        "version_name": "V1.0",
+                        "version_download_count": 120,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "23a65ba39a364bd8aea755b53250876e",
+                "model_name": "圆角玻璃幕_wenhk",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a299586dd9684edebe0982865fc47e6f/4a1a46eb3615b5363d8aacd77ace9e79b1f8b285dd8c4891e22056c40c158211.safetensors",
+                        "version_file_name": "yuanjiao_wenhk.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a299586dd9684edebe0982865fc47e6f/1e4b73974547494303903803e7e3485751e3d5bc562540f02635ed988205013e.png",
+                        "version_name": "v01",
+                        "version_download_count": 112,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "5fef3ef7a574431a8d7956167ac0af1d",
+                "model_name": "如是园_现代庭院花园景观_lora1.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/657821e215b44634993b6864c6876f10/3ae9f2d80ef668694f98b978e7a9c655ec0b715def02d4afe7774746b71cd097.safetensors",
+                        "version_file_name": "如是园_现代庭院花园景观1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/657821e215b44634993b6864c6876f10/4df1556284fbb7002e7ddcf5b06fd929257ab4e5a2acda487a3f8a67504e2649.png",
+                        "version_name": "如是园_现代庭院花园景观1.0",
+                        "version_download_count": 119,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "e7456b63efd744caa829fd9f2cb5507e",
+                "model_name": "AI辅助建筑创作_现代风小体量建筑设计V1.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/d412c0d7d2814c3887963c5589798b96/1630f5aefda3ae9be83b5ddd099aefd5d3aac13a038a9da74919fc5ef407ca82.safetensors",
+                        "version_file_name": "Wlimian-000010.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/d412c0d7d2814c3887963c5589798b96/8c92c99df63f95633b0ddd9864861c70a8e8b9c9a3932618d622f8a439a8cf95.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 195,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "3747bacef15a4803a54d7666bbcff9d9",
+                "model_name": "极简住宅丨室内风格丨住宅系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/0e36f7ca341448cbaf2aab92cfdb79fe/20240224-1708766753391-0015.safetensors",
+                        "version_file_name": "20240224-1708766753391-0015",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/f39b55b5678e16b57756d8d174cd3cae02fdd04dfded3af3e8c58380909c0dd4.png",
+                        "version_name": "v2.0",
+                        "version_download_count": 1960,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/20685d32e9124423bb517805a38bc258/20240112-1705047605380-0001.safetensors",
+                        "version_file_name": "20240112-1705047605380-0001",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/bbe73b0ecfdeec72f22b76a6a2404d5a56d149d0d62761975562eea910e44b68.png",
+                        "version_name": "极简住宅v1.0",
+                        "version_download_count": 292,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "9b6b9195540340518cdfe5a9153cdbf1",
+                "model_name": "幼儿园",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/982f415c241e4b92be907ead15aa3765/ab112b16aeb545c0dc9bc66d9bfba405d325fbe1c59ac2f39de36c511527afcb.safetensors",
+                        "version_file_name": "kindergarten.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/982f415c241e4b92be907ead15aa3765/320c60ef3758cdf7ebd6d72b91432b4739d4c6de91369fcf835c192902964a5b.png",
+                        "version_name": "v1",
+                        "version_download_count": 103,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "ff36d31d56d040bcb1a6283c43d259bc",
+                "model_name": "老王的一个小测试",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/c6798e4ece53763d49b76159b70aee6c/92ad54f16688042a1e7aa4b6d08d294afc30ac79dfa589d1c396ebafdd46f485.safetensors",
+                        "version_file_name": "LW_大模型素材测试.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/c6798e4ece53763d49b76159b70aee6c/5cccbf68be52e97910911038be339ef2938beaf6fbefa8620bf10c8fccaa0baf.png",
+                        "version_name": "V1",
+                        "version_download_count": 704,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "04f8f33947bf48ee82f36ee3569d6fc6",
+                "model_name": "SHM-党建展厅V1",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/14d112a1bf1041149d3493f19e2c7462/4a27944623182e00bf57d193e38e6a6bd4cdcb74e3a8f88e51fb2f3331b49713.safetensors",
+                        "version_file_name": "SHM-党建展厅V1.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/14d112a1bf1041149d3493f19e2c7462/07d17ce1c6ffcd8231a30a1b38bc0f8a6695388b34c9719f94ba4c74cb5225a1.png",
+                        "version_name": "SHM-党建展厅V1",
+                        "version_download_count": 158,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "3bb48a97c2084acdba7c258dcfb792a5",
+                "model_name": "如是园_现代极简庭院景观lora_1.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/657821e215b44634993b6864c6876f10/6083ed39a07c4127aa04250591cc26dd0709d9be542c11350a9f4e3067d9f581.safetensors",
+                        "version_file_name": "现代极简庭院景观.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/657821e215b44634993b6864c6876f10/3206dc0b1a698f43b43a409401ef269baefcaafac70a2320f526598a51246795.png",
+                        "version_name": "现代极简庭院景观1.0",
+                        "version_download_count": 57,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "629342e6895748048999cf94b5690e65",
+                "model_name": "UIA法式室内|超写实French interior",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/35e4f09979b84838bda275c980ac352b/52d7e2b0f2f7c9faa02d0feaefd032663ce66156e70cedf7a6d3c008b15d00e4.safetensors",
+                        "version_file_name": "fashi-2.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/35e4f09979b84838bda275c980ac352b/6c77d2ca63a9b61637e4c5833b46a2321e71cbed60d58accf8bbe9245278ef53.png",
+                        "version_name": "1",
+                        "version_download_count": 1903,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "21e97f03cb72424d89656d8b885ee8f7",
+                "model_name": "古朴红砖&校园、文教类建筑",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/10faeaf49aab4f1faee09818da82ccce/20240305-1709629986015-0005.safetensors",
+                        "version_file_name": "20240305-1709629986015-0005",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/1c2b080aec96732b80d587a2d77bbd4ca9004f76dd513a284783b4ae0cff28a4.jpg",
+                        "version_name": "v1.0",
+                        "version_download_count": 463,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "06505973021c417591470a13114d4111",
+                "model_name": "Missa_XL_折线鸟瞰景观",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/bc8d866a60da46bab1a4bee733f6c837/4f421f453089c400574cebec57d1b985c85f32ae0bfa51b2fec216e5d3c8fcff.safetensors",
+                        "version_file_name": "Missa_XL_折线鸟瞰景观_Final.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/bc8d866a60da46bab1a4bee733f6c837/49255ce0ac133f7e20077d333122293d673f1744c6cd5fc1a4d12d418e214343.png",
+                        "version_name": "1.0",
+                        "version_download_count": 26,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "70428c8e3d8e4138b78754c331e85b22",
+                "model_name": "UIA重磅升级|建筑写实类6.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/35e4f09979b84838bda275c980ac352b/f174c1e617d1f67e5e1fc8febb308812ba392280a60f31def787aa562cbbea6a.safetensors",
+                        "version_file_name": "UIAXD6.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/35e4f09979b84838bda275c980ac352b/ffa60d2cfdcd077f2317a9c2fb98c28326b74a54345e8d5d97c8f2c823e94042.png",
+                        "version_name": "1",
+                        "version_download_count": 1977,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "4133a150c5fa4065b876a5a4083bcbaa",
+                "model_name": "zz_古建筑",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/213d29ce88c749f0a47968362c30fe0b/256aa70f49ed48e561f670a98b004b8ad6ecaf2e73ea82f688447836f727befb.safetensors",
+                        "version_file_name": "20240311-1710124399041-0008.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/213d29ce88c749f0a47968362c30fe0b/07f684102f614554c074d5ec5ee4abeb6770dfcb8bfa89db89e7c882d4502f77.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 302,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "4a57e01f63d54f368b56e875d7a44791",
+                "model_name": "学术空间丨教育氛围丨工装系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/7b950626fb7b4a709b96fa24a387658f/20240321-1711027787222-0010.safetensors",
+                        "version_file_name": "20240321-1711027787222-0010",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/aab2577995f98fe57a2e76c0ae3787e84529904a9a6ed5cc5de082b5633efc49.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 157,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "49894ad847264bf2a39256017d445b8e",
+                "model_name": "中式庭院花园-氛围景观",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/657821e215b44634993b6864c6876f10/621911fca2f2a65102028b0ff099808c3a3acb217846d0554d1a24048af2d852.safetensors",
+                        "version_file_name": "中式庭院花园.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/657821e215b44634993b6864c6876f10/ecceee09961306850ef4bb32b3630ef3c6d1ecb5720c7178211c2a53ad36ce8b.png",
+                        "version_name": "中式庭院花园-氛围加强1.0",
+                        "version_download_count": 207,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "25c1c23056594c17b5f9d9d1f80cdbea",
+                "model_name": "装置艺术风格",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/900a4c17a4b64be584f3b2e0e4497d78/2d861947bc314ced1a984199781acd64438a563fa20c52b6c3b99f4f2ddd755f.safetensors",
+                        "version_file_name": "20240321-1711023498234-0007.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/900a4c17a4b64be584f3b2e0e4497d78/e98c0f276863ea450854bd5d256bbae37c9f26dc529e82023395be2edae85a9b.png",
+                        "version_name": "v1",
+                        "version_download_count": 90,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "bdd7f812249149349aff7ae58137c17b",
+                "model_name": "国风/中式宫廷风",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/0843bc3baff942ae8f87a7b6f2c89042/120a7dd0984e45ab07150f33fa2e2076fbaa89a7f0c231833eedf8795988d943.safetensors",
+                        "version_file_name": "gongting-000008.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/0843bc3baff942ae8f87a7b6f2c89042/c08c8a32975c081926d87f7f89aee75a4c68926c4a2a36d2b7cfbb9ad259834f.png",
+                        "version_name": "16.1",
+                        "version_download_count": 15,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "45534a1c1e0740059040d13301ebce79",
+                "model_name": "售楼中心丨娱乐会所丨工装系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/2cec6d164444e3a0757d7db0804bccd8b789a16d17172b01cded01a975a0fd9f.safetensors",
+                        "version_file_name": "20240318-1710739710392-0012.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/8cea0f374b22d177d81a851a8c4098e17a6636d50986c7a426375025e711857d.png",
+                        "version_name": "v2.0 ",
+                        "version_download_count": 320,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/b679bf22a08e4df3ac2d1d4687aec7c2/20240229-1709181354640-0009.safetensors",
+                        "version_file_name": "20240229-1709181354640-0009",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/c9945c232deb293723d833c2c3b49a217db9060f97751d2d79e0317b51d59cc0.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 126,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "05624f25d14446a4a2f2374971f085ab",
+                "model_name": "Missa_XL_花镜",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/bc8d866a60da46bab1a4bee733f6c837/e1ffd33d3410b579d1bdff4d22803bc4ca45604b50f2827014145dd2d1d3ea2e.safetensors",
+                        "version_file_name": "Missa_XL_花镜_Final.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/bc8d866a60da46bab1a4bee733f6c837/6f1c82272397103968f52ffe363db6423f1e283e534b0e396d8780baba4a7c5c.jpg",
+                        "version_name": "2.0",
+                        "version_download_count": 403,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "99cd597e131d46d5b543b864b8c6c9f6",
+                "model_name": "办公建筑_wenhk",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a299586dd9684edebe0982865fc47e6f/11e905499d432387bc5fbd106b31110ef65269607cc22d44343dbf6ad6e615ed.safetensors",
+                        "version_file_name": "bangong_wenhk.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a299586dd9684edebe0982865fc47e6f/cf323d0d4b50cbf25a16e57762073970255ecec7ea07a972526ccb9b076af01a.png",
+                        "version_name": "v01",
+                        "version_download_count": 544,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "9444ca6143aa4d97a556988901779d0a",
+                "model_name": "天空浮城",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1007756a0bcc4b31b008fd3524446140/20240406-1712373096411-0020.safetensors",
+                        "version_file_name": "20240406-1712373096411-0005",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/cf93963caf974aab89617dcfef252266/d97d6b3b4cdc234be10bbafafb4bc088eaa124502c8ff843680be806897c60c3.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 12,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c6f021e455aa445490bb16fccdf48111",
+                "model_name": "New Chinese_新中式_茶室_会所",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8b7400a5961e4c1d898dbb74e98d4c17/1f8ce2531e72bc15a667c85bf6e5c4a24b062367a9b45455f763f4216e0aa23c.safetensors",
+                        "version_file_name": "New Chinese_新中式.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/8b7400a5961e4c1d898dbb74e98d4c17/877f4aa69a20c655ecf5cc1fe3bdec1ffd56c0b453f1a12c79f57bc588b55942.png",
+                        "version_name": "1.0",
+                        "version_download_count": 886,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "604f854aa4bd4b2bbe37bd30784cfac8",
+                "model_name": "乡村景观18",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/bbda7f1170a04f68be9ee3c544f3e5fa/64e99fc698804528d19808189d9f83d550cad1c6e519c68333f2c391ae737aa8.safetensors",
+                        "version_file_name": "乡村景观18.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/bbda7f1170a04f68be9ee3c544f3e5fa/8d475518d12ea07b7998fe078b4520fa4b1c9973735afcced55c78536def3fe2.png",
+                        "version_name": "v1",
+                        "version_download_count": 1386,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "98df3a6e09084fe78f0382d5269541f2",
+                "model_name": "小高层&高端住宅",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/08df7a1823cd41999e76c9aa1cea4f08/20240312-1710220410204-0010.safetensors",
+                        "version_file_name": "20240312-1710220410204-0002",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/119874b1e7f530803587aa938e872d988cae52c7cd1e3107b8710056ab449359.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 285,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "7300fa6cf2414a108d3de0ae9443ff08",
+                "model_name": "雨声丹药—极简室内风格V0.1",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/776a2d3ca30848edb34267bfdd61da0d/9422a999727f6b68e74b4b85a26a0026c49a442d16a561c7fa84f713fbdf82cf.safetensors",
+                        "version_file_name": "室内-01.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/776a2d3ca30848edb34267bfdd61da0d/a246bf7aee2afcddca302c1564e141638b06d06690074ff8b36c5c9476e7256a.png",
+                        "version_name": "极简-V0.1",
+                        "version_download_count": 29,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "510fc45d8365408ca4ac6281c9736529",
+                "model_name": "极简风格丨室内风格丨住宅系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/f2750914a7f3e64fde9b8d233472d1ba8709d0f8c2850f26ef325bca535afc5d.safetensors",
+                        "version_file_name": "Minimalism_20240226171203-000012.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/8dfa54e487cb3628accfdc7f02aad53024adce78c86aa5a97bc9eee9c45ff75c.png",
+                        "version_name": "极简风格v2.0 ",
+                        "version_download_count": 537,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/e3cfcea00bba4cc188296b2c11656dab/20240118-1705568449580-0001.safetensors",
+                        "version_file_name": "20240118-1705568449580-0001",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/2dc1c0618ef0016012f21dec6f2e24fae3727103319bc080c3b1d703ce67600d.png",
+                        "version_name": "极简风格v1.0",
+                        "version_download_count": 325,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "b1cb53cc4b8749cb9f27e1f0c16e3034",
+                "model_name": "横线条&厂房、研发办公",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/826a79df3f7c4e3dbf818ea88108c3a3/20240305-1709621780201-0004.safetensors",
+                        "version_file_name": "20240305-1709621780201-0004",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/d131cd73954366ce4ca5233e104516311d4d1c8fa8efaba44eb216cc993dcecc.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 497,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c1fe1509d3c54eae830027e6090549b0",
+                "model_name": "禅意东方zen_style",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8b7400a5961e4c1d898dbb74e98d4c17/d8179f2a5a43747fdd51982094d1caf8453724c98d25053dce810d3a919f9bf5.safetensors",
+                        "version_file_name": "zen_style禅意东方.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/8b7400a5961e4c1d898dbb74e98d4c17/ae6b7ddfb0081359d9c0acbebfa9977fba952ffb999af9a1cfea6da0b55334e7.png",
+                        "version_name": "zen_style_禅意东方",
+                        "version_download_count": 538,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "cb062d825df54345a52f4b9ca30cbe54",
+                "model_name": "日式庭院_japanese modern courtyard",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/64ed6c29ce474125ad3551e89a118b96/20240321-1710957284164-0005.safetensors",
+                        "version_file_name": "20240321-1710957284164-0005",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/106ed6010a760bb16dc5d8b444de4432/8d7e25743ab18314ad37107244ea8ffbc80a75b3ded83245d30426c0403e76c0.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 71,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "a171ad18da7a4cd7812e6d2bfb736917",
+                "model_name": "AICHANG|超写实室内设计专属大模型",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/82c1c9be6208453587aa0ea067cf61d0/3f36310b280dda2be762368773ca55a094ebfcda53c58484c493737e334450a0.safetensors",
+                        "version_file_name": "AICHANG东方主义室内设计大模型.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/82c1c9be6208453587aa0ea067cf61d0/aedc7b2ee409bbc9751ee4b34f75c81df9504a2277d640c2b7d651ba2d568910.jpg",
+                        "version_name": "1.0超写实室内设计大模型测试",
+                        "version_download_count": 1905,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "517c6ea68f7b417aa7fa334e31f3832e",
+                "model_name": "xxxxxw1.5huahua01",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/876973e4669f41678aef172793f2f8ab/293b57cd6e2b1de291566c71fb6164ef11dbd14353c2ce2ab0b4a3c21e7fc468.safetensors",
+                        "version_file_name": "xxxxxw1.5huahua01.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/876973e4669f41678aef172793f2f8ab/51d18c22228690ae2f45e8a7ae65b1bc94960f54e77178da08866f569f45cfcb.jpg",
+                        "version_name": "xxxxxw1.5-植物系列",
+                        "version_download_count": 144,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "5de461bb63c7409186d6d26481d44b9a",
+                "model_name": "红砖艺术-室外",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/f63dcbd6661149e899903793b7969c7c/07a7d0572d32bb53097b4e704788f6500bd10b56180b57d86bd83af1083a173a.safetensors",
+                        "version_file_name": "红砖艺术.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/f63dcbd6661149e899903793b7969c7c/73955c3bb89b256825bbebb547d5ad7c5496aa93fb17710972eb3c7ca59608d9.png",
+                        "version_name": "FX-Design",
+                        "version_download_count": 278,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "a7ba6ea2155a4f8382fb30fca6515b73",
+                "model_name": "现代中式园林景观",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8f49c7adbeb64983820b5b7734e3cf45/cf0d05c66762d7d81b8db7c0e030aab9da75946e0e2026b1963e7a9b508a7697.safetensors",
+                        "version_file_name": "中式园林景观SD1.5.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/8f49c7adbeb64983820b5b7734e3cf45/d99e4908d44eeb2ba8a52182d56363db959fa9956b12666dac941bd6fd94d416.png",
+                        "version_name": "中式园林景观SD1.5",
+                        "version_download_count": 116,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "09711ded648741df8f672340971ffe06",
+                "model_name": "AI辅助建筑创作_非线性概念方案V1.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/d412c0d7d2814c3887963c5589798b96/75ad389dd6064397462bbdbd0bf2db29a009e6c351ebca9c61a807abeec76bd5.safetensors",
+                        "version_file_name": "W ARCH_20240225001026.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/d412c0d7d2814c3887963c5589798b96/4c9e63aadfe3fcad97e963da828f2b4e4af5d7ab9a6f4f2e5e00b6c7f9271ac3.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 148,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "6e0da7852f134e7ab1e61e0c4ccdf1d2",
+                "model_name": "现代风格别墅",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/4027267955394496bc0af7ed43ec8838/a22a6ef2f4b02e7a676aa7f559034512921ab70896cf2e38890091fd22202057.safetensors",
+                        "version_file_name": "modern_style_house_1.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/4027267955394496bc0af7ed43ec8838/dbf4c4a75ebf77a3b21f0f9ff4eaac61c3870af239e00a46bad868a9a6679634.png",
+                        "version_name": "现代别墅1.0",
+                        "version_download_count": 216,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "5e1b4ea7f9554e46b2509f59269b1ea8",
+                "model_name": "城市设计大模型 | UrbanDesign",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/e5a982e011211b29df92689c53960640fec0cd47858e87ff246f1469b34f76bb.safetensors",
+                        "version_file_name": "RealisticUrbaan_v7.fp16.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/image/cb71159df37bd28fc94d70e0a365498ec45f0c60cf69c1b8599a12044de03a8c.png",
+                        "version_name": "v7",
+                        "version_download_count": 11440,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a91e112ceb076574a4b326bac0540653f0ecb37b4ffc6addbb1468efd494b963.safetensors",
+                        "version_file_name": "RealisticArchi_Mix_v6.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/986918125eb16c686caaf3a9dcad2465854654808286ad16de29c97404806ead.png",
+                        "version_name": "v6",
+                        "version_download_count": 2412,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "7205e15d75b64d2281a5eb6a39b796ca",
+                "model_name": "AI辅助建筑创作_异形折面方案设计V1.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/d412c0d7d2814c3887963c5589798b96/c9899c698084fa7a88aa924d96b019c98cb51293fcba646cdabbaedc22c8dfd0.safetensors",
+                        "version_file_name": "W ARCH_20240228002210.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/d412c0d7d2814c3887963c5589798b96/414e35b8885b216de808233473badde49fd15dff711ba96deca8a106ed6ea271.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 125,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "75ae668d148f471e9e5ac3020f9fbe2d",
+                "model_name": "新中式自建房，乡村别墅，新中式别墅效果图V1.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1e96605b9c114b118e79a24da5c5159a/41844ea3238573c631ffdc04089b8e5c35600970557272c0244e36459d6a7af6.safetensors",
+                        "version_file_name": "zijianfang.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1e96605b9c114b118e79a24da5c5159a/ef73c2eec58ba219d1d2364ad2400f03a51907d037d7a2205b75bae7fbc5e210.png",
+                        "version_name": "新中式自建房，乡村别墅v1.0",
+                        "version_download_count": 71,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c4d0c53568ac4a619c56ce34c1b6fc37",
+                "model_name": "艺术楼梯",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/f6873b202aa7144a5be22c5cf25a2c8754c34783869041a3392a0ac7d84c4820.safetensors",
+                        "version_file_name": "20240328-1711608781820-0011.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/e79674ad4642fe2fd8f838cdc8a6c5fd001bc5b2a0d64a1450387084aef69749.png",
+                        "version_name": "艺术楼梯v2.0",
+                        "version_download_count": 49,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/11de9cd6e8c64b1eaf790fd79979f2ba/20240112-1705049422003-0001.safetensors",
+                        "version_file_name": "20240112-1705049422003-0001",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/cf4b7fd0616f6b7f720f5e93cd3dfa7b1c578d74d31423c6a3795e59ac0f80f2.png",
+                        "version_name": "艺术楼梯v1.0",
+                        "version_download_count": 140,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c61216da11c74e5c913c3fafc457d1f3",
+                "model_name": "酒店公区丨公共空间丨工装系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/b5698cee22b7463ca7c65289d1c66af3/20240222-1708588944787-0017.safetensors",
+                        "version_file_name": "20240222-1708588944787-0017",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/9b08e4b1a8304e6b123948d63f912d61312460cbab0812b3366888e32881bf61.png",
+                        "version_name": "v2.0",
+                        "version_download_count": 855,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/55ab46f87eb54cef802f282ad2d8ebf4/20231229-1703825473706-0001.safetensors",
+                        "version_file_name": "20231229-1703825473706-0001",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/9523b1a39d4b1a90a213d5fb84c6a867d779e6d890e2d83eac6d7deaaa3aa75a.png",
+                        "version_name": "酒店白天公区天光v1.5",
+                        "version_download_count": 426,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "8e4978dde7e7407a91d06499fa1df62e",
+                "model_name": "实体模型",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/0fe553c744e74428b45dfa1d63224ce7/20240306-1709722686359-0005.safetensors",
+                        "version_file_name": "20240306-1709722686359-0005",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/0307dd8b7161cef126bbc9f075bbbca06dd7d01363fc5708c71b997ee3d335e3.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 181,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "3b3c89f877c24b0aa39b6bc0b895eac7",
+                "model_name": "古建城楼",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/fc90127e45224b3dbc353ef70178b69b/3bf0da7063d0a6cde7fc09c92a99b00ded30846c096457a254cb26de86959401.safetensors",
+                        "version_file_name": "20240306-1709716227694-0010.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/fc90127e45224b3dbc353ef70178b69b/0b8425544ded632be1e89e5a99ad98e63e81feda9082a47a806788558535a082.png",
+                        "version_name": "1.0",
+                        "version_download_count": 242,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "3044327a1c8344bd9ae7c869044041ee",
+                "model_name": "逸 1.5 | 理查德迈耶风格_Richard_Meier",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a4633d5ba3314eb9b7a7d36a3be09a08/0c3ef0cdcdb1eed1d313b18863c36ea1f53adab4a3c79f9469c189e7fba4d464.safetensors",
+                        "version_file_name": "理查德迈耶风格_Richard_Meier_V1.2.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a4633d5ba3314eb9b7a7d36a3be09a08/6cf95dadfe60b4ea103b76a5d03e7d2106859084c6264a95a0362eb2c379eba6.png",
+                        "version_name": "V1.2",
+                        "version_download_count": 19,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a4633d5ba3314eb9b7a7d36a3be09a08/6b5f095496f577e5a09431b0dcae4b2c65507ed334c72dca3ac2d08134f933a8.safetensors",
+                        "version_file_name": "理查德迈耶风格_Richard_Meier.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a4633d5ba3314eb9b7a7d36a3be09a08/d3315fd720ff87662f858f1e214bad60b4deb6787daa0e7a18419ecd3f43de96.png",
+                        "version_name": "V1.1",
+                        "version_download_count": 33,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a4633d5ba3314eb9b7a7d36a3be09a08/648bc7829113a7c2eb2c2634add8b9965a53e41b3616e5929c0d931e995d0ecb.safetensors",
+                        "version_file_name": "理查德迈耶风格_Richard_Meier.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a4633d5ba3314eb9b7a7d36a3be09a08/063b30c85d9cb8d9d2f1f668bc6d27902ac8d06d9de86a4057ddf7321cdda8ca.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 52,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "40ad07fd03b145429df65bce15df7aaa",
+                "model_name": "滨水景观mix",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/d2718d5fa79d49db9ee2c35fa12f9e80/5be54fed15f29adfb4b9dd81809be9187de1ef1d47d09028522d9be80e8634c1.safetensors",
+                        "version_file_name": "Waterfront landscape mix.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/d2718d5fa79d49db9ee2c35fa12f9e80/92aca93b1a83319ba750e8c4a0cb24821886568f62b29aa281d837dc09312b10.png",
+                        "version_name": "滨水景观mix",
+                        "version_download_count": 374,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "928900f7d75a4e4d9274b4f026ab57a2",
+                "model_name": "全网首发|科技展厅设计|XL",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/3c310c64ccc64c548c952cf64ee96d0f/20240401-1711963310921-0010.safetensors",
+                        "version_file_name": "20240401-1711963310921-0010",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/4c38361bca92427393194ce920cce617/da0cad635a08fb98e4446b15d8b478e25e72bbf818152855a070ef032867c756.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 59,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "769f0bf5762e44f2ba6b7b33270dd2a1",
+                "model_name": "LandscapeBING   v1.0/冰醋酸 百变景观v1.0",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/0bbe3f1aa306d4ce40bbfd467b10988e4696b3d4f9c7610b4564517cacd31839.safetensors",
+                        "version_file_name": "landscapeBING   v1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/image/266bf2b9ef17fcff382b11748a4bcff7fff3a7baa2c005601789398ec435d789.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 6523,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "ec243f48fb3d46b28a35207f73805f32",
+                "model_name": "雨声丹药-新中式会所V0.1",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/776a2d3ca30848edb34267bfdd61da0d/458d1b92122dbf6f158ff3485439149540ccca90d380e8fde2050563439b59d9.safetensors",
+                        "version_file_name": "xzs2-0020.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/776a2d3ca30848edb34267bfdd61da0d/8deae44b20c01e63970c0df736070e0a25af7e358ad6e7986f676dad92c54da4.png",
+                        "version_name": "V0.1",
+                        "version_download_count": 60,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "d3f74b73a89e4e5097a4f9d6fbeaf4a9",
+                "model_name": "木头孔原创空间画风",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/c6798e4ece53763d49b76159b70aee6c/2291e10e21028b5d60f5753dd779156f600717fa6243ec6093df53caf1b7a60c.safetensors",
+                        "version_file_name": "KXDwoodcooV1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/c6798e4ece53763d49b76159b70aee6c/023ca20ae13ceca4322bae7a408b5ea0f06a0d7611698f255e94aabd856c0650.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 7,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "a0e7a6061244465f906555c7c44ec208",
+                "model_name": "法式经典丨室内风格丨住宅系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/365b88b9230c4b8fb4083b7eb62d4e60/20240229-1709188443046-0009.safetensors",
+                        "version_file_name": "20240229-1709188443046-0009",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/3fb0ecc58bb871eae700f097fc5a778a64dc03d62b6a4e4a1ed5e340190eb1d1.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 373,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "14b31074196f4889aacc43ddeb10fd75",
+                "model_name": "体育公园景观13",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/bbda7f1170a04f68be9ee3c544f3e5fa/3813bf92b9e2770e924513e85c1072d8fab073bfaff8e34918cf897b40318d63.safetensors",
+                        "version_file_name": "体育公园景观13.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/bbda7f1170a04f68be9ee3c544f3e5fa/73b8dde17300b6e8eb77eaf45b323487cbd00a947842db646a104e6a25c2964c.png",
+                        "version_name": "v1",
+                        "version_download_count": 531,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "12d857a630774a0c94e5a1eaf0efb24e",
+                "model_name": "黑金酒吧丨威士忌丨材质颜色",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/ca9e8f083c614f80aa9748617569763d/20240304-1709560402507-0013.safetensors",
+                        "version_file_name": "20240304-1709560402507-0013",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/d30f53a467d636f6905a5bdeae8be1d04b5de40151533ea7726dc98bdc9feaf0.png",
+                        "version_name": "v2.0",
+                        "version_download_count": 217,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/883a868eac60481cae1a978c1b18feb1/20240118-1705570517126-0004.safetensors",
+                        "version_file_name": "20240118-1705570517126-0004",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/f99ec1e51cd80f2c50ba182b462f3eaea1110c32aab5f6ec24aaa071484dfd9a.png",
+                        "version_name": "黑金室内v1.0",
+                        "version_download_count": 304,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "012eeedd7d004438bbc7f7a8b4fc21ff",
+                "model_name": "万享-室内外",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/654774b4dc4d40b89251557f9e902c6c/20240312-1710182651477-0020.safetensors",
+                        "version_file_name": "20240312-1710182651477-0020",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/037414ba212f4affa014b2c2d164ba41/577fcb8d12dd0faf1fcb9980322311df361d60df34f09fc079cb753d4e011ba3.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 134,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "83ac40f56832420994951c74568994c5",
+                "model_name": "QLCD-中式庭院",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/69ab364c0be440cb811b7402ebac2b73/4aa31f67da258ed92ac1c5d14638c72bf02491004636b0d59977e6ce8571e1a8.safetensors",
+                        "version_file_name": "qlcd-zhongshiV0.2.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/69ab364c0be440cb811b7402ebac2b73/298e5eaf5a9b34a05c5d9a726e14ff289fd21597010023fb06a057b825f47cb7.png",
+                        "version_name": "V0.2",
+                        "version_download_count": 138,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/69ab364c0be440cb811b7402ebac2b73/9b0186e7fc47a173bedc2ec58f13279621f87fffe354ef705fb14d8de9a5851d.safetensors",
+                        "version_file_name": "qlcd-zhongshiV0.1.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/69ab364c0be440cb811b7402ebac2b73/298e5eaf5a9b34a05c5d9a726e14ff289fd21597010023fb06a057b825f47cb7.png",
+                        "version_name": "V0.1",
+                        "version_download_count": 1,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "4f015024481a47a9a30faca5d0482426",
+                "model_name": "乡村景观17",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/bbda7f1170a04f68be9ee3c544f3e5fa/0fb9e648192f422c8311ce3faeceabcf6300446c5e099fdf76eafdfb19792ecb.safetensors",
+                        "version_file_name": "乡村景观17.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/bbda7f1170a04f68be9ee3c544f3e5fa/09bd77cbbe734bfe2b16075b84cd0e963458a87c2c09906435304cd48a116cea.png",
+                        "version_name": "v1",
+                        "version_download_count": 497,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c4fae7168e9948c58439c190befaf1fe",
+                "model_name": "极简主义",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/f63dcbd6661149e899903793b7969c7c/ef8176481f4c1088faf6b6513bc46aa3bd9f6e721170d2d49157ffe1979a55c3.safetensors",
+                        "version_file_name": "极简主义风格.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/f63dcbd6661149e899903793b7969c7c/a86368279dc8808e36f8f9ffe5f3fed4d4e16deceb6a489078f0d23ab2a53933.png",
+                        "version_name": "FX-Design",
+                        "version_download_count": 337,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "87e21693a58f47199f4816803fbdbf40",
+                "model_name": "现代简约-室内家装",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/9c66b113b2ae4c8bbd750385f9042636/20240319-1710838229021-0006.safetensors",
+                        "version_file_name": "20240319-1710838229021-0006",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/21eeb3e0893a4a3280deb18069de01f7/f68c226e9284d6d1c24e26aeed4327075488feaae031c2ace69ec7129745cdde.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 53,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "d5f2057b25b04e57a4c13c102530d52c",
+                "model_name": "Interior Design | 室内设计通用模型",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/3ade22865827eed3effc6f5c55082fdcd50af2350d07c52dad540c6c51367750.safetensors",
+                        "version_file_name": "室内设计大模型（建筑狗）.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/a2a333d25acff16ccf04511300d95fc95c255a5c2a75a79a948f7378db998459.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 9625,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "dfc8cb99611042d7b197a4f8a5127bdc",
+                "model_name": "HANDMODEL_手工模型",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/ad56554ba4f24a8197735de1bb8a059b/e9ae988c40efb92116afcc603239ff625d1df0d0a344d659c15b1eddb36adb4f.safetensors",
+                        "version_file_name": "handmodel.V2.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/ad56554ba4f24a8197735de1bb8a059b/22cb362edbb88bb518cfb198dda7f8a50a225584f0ff78caf90f7ece9dc22cc1.png",
+                        "version_name": "1.0",
+                        "version_download_count": 298,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "9817016ad9134ac484fbae6839409a36",
+                "model_name": "地标建筑超高层 | 建筑设计",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/71143f45bad64f56a5d5605bef39d91f/20240126-1706262968760-0005.safetensors",
+                        "version_file_name": "20240126-1706262968760-0005",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/21eeb3e0893a4a3280deb18069de01f7/b03240436c53fe744a78f1669cc09e3f602e30cd0d8125591d20b570a1e781a9.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 1432,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "3f976a71742f4868a1f1806762a6f401",
+                "model_name": "AARG_Siteplan_Render 彩色真实总图",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/c935d2fa9c2ec909909b9c36c453207dc3c646e8b8e054b470085b5297c7c95c.safetensors",
+                        "version_file_name": "AARG_plan_V1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/3d3e5d287dc1cc966f7449ffdd6686f236f31a0e8d6979ad71f98759edbc60f7.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 4826,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c58c07d1b99f4108a3a3c25a1b301929",
+                "model_name": "法式轻奢风格 | 室内设计",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/c7b67489784444389d946d114879b7c6/20240227-1709003921731-0007.safetensors",
+                        "version_file_name": "20240227-1709003921731-0007",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/21eeb3e0893a4a3280deb18069de01f7/2e84ca773d5621c682e79135c567c88ecb184e40403e5f8597625fd32e1fec8f.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 417,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "dfdbb3f1acca4333a95b2973929e68e4",
+                "model_name": "现代轻奢住宅",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/f63dcbd6661149e899903793b7969c7c/03c4e5c4c8ef17e71c0360eb4e124ba903f47f4e1396355ab1b4a980bed19054.safetensors",
+                        "version_file_name": "现代轻奢住宅.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/f63dcbd6661149e899903793b7969c7c/8aa3a150e9050f7b83a8214cc873b21e1c7114e67ea1007de07defbcea9a01f0.png",
+                        "version_name": "FX-Design",
+                        "version_download_count": 650,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "4eb802a26fbd1715f148d770be470c61",
+                "model_name": "照片转线稿-线稿模型",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/78b78d6c8aca4cf7a94a3166adc9738400a9cb54a002cb570cc31cba5b8b4f78.safetensors",
+                        "version_file_name": "archline-V4.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/6472d1f9f0da4.png",
+                        "version_name": "2.0",
+                        "version_download_count": 3650,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "974ac38f5b16f10dcd43f37466dd92d3",
+                "model_name": "老王MIR建筑鸟瞰表现增强",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/6d1ee46c9ef1cf8c9db72cec791fd9b7383e6b6a4f05be4b8494e76765d76034.safetensors",
+                        "version_file_name": "lw-MIRNKV0.6废物版.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/64885b35b8b4f.png",
+                        "version_name": "v0.6废物版",
+                        "version_download_count": 3550,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "dbb6c4338cd2497da0cfe9c0061cf93c",
+                "model_name": "室内设计全屋大模型（老陈）",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1544180259934af6bc00fed12343a5cd/e779aefe562c7b7b963fe1b9001215a786d3f52896440d956e31c11ebc14e8ee.safetensors",
+                        "version_file_name": "da22.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1544180259934af6bc00fed12343a5cd/73920df08d897abd100df2efce2dfdb61a451dff0acc0829c7d6c706a1f91377.jpg",
+                        "version_name": "V3.0",
+                        "version_download_count": 3849,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1544180259934af6bc00fed12343a5cd/d0d3b68caed8ff80fe19cf75056995d2123ca2597daa501da96477a1672509d0.safetensors",
+                        "version_file_name": "da22-000010.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1544180259934af6bc00fed12343a5cd/00397fceec29ef0d83e1f8b3d00a7283cdedc5ad55f5df6241ac7afb6ae69868.jpg",
+                        "version_name": "V2.0",
+                        "version_download_count": 7,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1544180259934af6bc00fed12343a5cd/adbc4ae5c946fece41209a268577e47fce593157b499f044945836afdd44a160.safetensors",
+                        "version_file_name": "da22-000005.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1544180259934af6bc00fed12343a5cd/e9bdc37e8f237bb6335d49a7c526115437c768c60d29b38367cae842c823f584.jpg",
+                        "version_name": "V1.0",
+                        "version_download_count": 8,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c7fd43fc6f1048a490458db82c243758",
+                "model_name": "流线粗犷&室内设计",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/2c95756701f147718d29c9c11da971a8/20240312-1710225223041-0006.safetensors",
+                        "version_file_name": "20240312-1710225223041-0003",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/22a2499dbce98cf0cbf6b6b465cbede5c2700b21d50a9484b48c7cae8a58aa03.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 98,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "ddb2ae596d8f447da4551f87f536a144",
+                "model_name": "白色系&幼儿园、中小学校园",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/bec33b4e3e1c44349d6bc6772a63612d/20240228-1709106762946-0004.safetensors",
+                        "version_file_name": "20240228-1709106762946-0004",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/22e67e7ea0c7e9b5ace3d40cbc9a2a2ad83aef54b4e1226d0b992cafb68008da.jpg",
+                        "version_name": "01",
+                        "version_download_count": 370,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/bec33b4e3e1c44349d6bc6772a63612d/20240228-1709106762946-0003.safetensors",
+                        "version_file_name": "20240228-1709106762946-0003",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/72218047d8bc4d0985c136df2180514d/0248bd9a7730cc6461587de8395e541aea431c54fff03b9c7f086963bceb49a5.png",
+                        "version_name": "02",
+                        "version_download_count": 5,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "7674e68a9250478695406c667c1b6bb3",
+                "model_name": "城市万象 | RealisticUrbanMix",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/eb7e6dba2c724eabdbd71eb1f9bf6641e0602d306c41ab8d28898d8634e946b5.safetensors",
+                        "version_file_name": "RealisticUrban_Mix.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/054ce26e20e29807c8efe98702146ff15eca7164e8f7b8e787f5445b249c3228.png",
+                        "version_name": "v1",
+                        "version_download_count": 3099,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "e0e6bcca688a42e68f9d975f727bae83",
+                "model_name": "lx医疗建筑鸟瞰",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8d1d167b9a044c65a9da42d05885c182/4c9656c6f5cb92f0b9bf1e94e5542f828e45345b0ea31b8cefdf4b1a8c07c81c.safetensors",
+                        "version_file_name": "lx-5.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/8d1d167b9a044c65a9da42d05885c182/c1d17c414285fc0581452af1a728d46001ca4fbe0dd1e489b03881869e4c2bd1.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 66,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "2cf68511f56d443bb94c597c1b9aa9ca",
+                "model_name": "摩登现代丨室内风格丨住宅系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/5d43b4db84a5427c99619c026f8c1ebf/20240201-1706781518519-0003.safetensors",
+                        "version_file_name": "20240201-1706781518519-0003",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/c952c463746181228d4322315e5fda366c9dfceb94e40f6ef4624f94799fe40a.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 833,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "a3e8e54046394445aa06d94f14f55011",
+                "model_name": "奶油风室内设计lora模型",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/71f3c507ddec44ceb77743b35922662b/d8bd58620ddf6623187434c278c2a110b250e3e376132c889c77fd9a13d1505f.safetensors",
+                        "version_file_name": "cream.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/71f3c507ddec44ceb77743b35922662b/42aab7aab3360b12a67bb756c189c07e52cf371190c48db6e287d3ec1b4ff88f.png",
+                        "version_name": "1.0",
+                        "version_download_count": 32,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c4ba3167b900492d87f1cb9c28742a46",
+                "model_name": "Missa_XL_现代庭院",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/bc8d866a60da46bab1a4bee733f6c837/c46f0766bf8f281089b53e12e314c1907aee8804413775b8749450709feec832.safetensors",
+                        "version_file_name": "Modern_ garden_Missa_final.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/bc8d866a60da46bab1a4bee733f6c837/11a0b3733ece7b4c97abc9b8e2bc272d824608693f02742a9732682d6abe18d8.png",
+                        "version_name": "1.0",
+                        "version_download_count": 376,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "86c8ae8736da42d3a65b36ee5e888870",
+                "model_name": "热带雨林丨餐厅酒吧丨工装系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/a27496ff1b864dfbbcd541867bf2d398/20240307-1709818273802-0012.safetensors",
+                        "version_file_name": "20240307-1709818273802-0012",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/a89fbcb229623f9ef0970cf9529ee15fd61fa90df68f0e047297f303d55a2d71.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 132,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "7b0987c42e1749c0a7de9fa18d278320",
+                "model_name": "我爱我家interior_smgs",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/87a56546d8dff722dbb07c991ba3bfc17c4a2dc4b9460fc2f2939b9520ebd965.safetensors",
+                        "version_file_name": "interior_smgs.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/30c701ffde16241ff2fc91b38192b59075a2060a395ede45c65f1c5cf6b7a9f1.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 5010,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "0ca6d5783e904acc8ac74adb3f4f1db1",
+                "model_name": "超级写实的古建lora-Ancient constructionm_MYstic",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/d2bc62e4ae005f18e510fd11a61c8ad23fe64bda857849e530a39264aad311ed.safetensors",
+                        "version_file_name": "Ancient constructionm.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/image/a8c3f4609259c644f772773d376be264417322820689544bb2258143a01024ce.jpg",
+                        "version_name": "v1.0",
+                        "version_download_count": 4244,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "a84903b0cb3c4e55b86f6c34c42436a3",
+                "model_name": "法式奶油风室内设计|French Cream Style ",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/02e155f07daf9a3e401a3d0802228f2e88a9005b6b0919798596beb7656aeec3.safetensors",
+                        "version_file_name": "French Cream Style.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/d9bcfed44525019e433c10a113bca2443d956612ec3850abbb264358c6c0ab7c.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 5088,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "774f579aae8d1774b900957ce7d3b4b9",
+                "model_name": "LWZP-老王建筑总平面填色",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1d842fe31eec7404cbb20604e8901dbc6effc6c93fe899acfd778bdae298a36a.safetensors",
+                        "version_file_name": "LWZP-V0.1P测试版.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/bddec59e047d31ae12fd8cecb2f253f14e254eaaa6106493525086653e41b887.png",
+                        "version_name": "V0.1P",
+                        "version_download_count": 3470,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "f6f37a2ed2214fc2926526f9e585e509",
+                "model_name": "未来城",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/3df226c48f81ae3bc8a6b2f70452d0fd3a76584baa4359bbd779348083024678.safetensors",
+                        "version_file_name": "未来城_Science and technology (abbr.).safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/60f642486abff844dc3e9841bd2ab52942e99cb2a10d7f50af363a3ad2fcee40.png",
+                        "version_name": "v1",
+                        "version_download_count": 1482,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "e11747a5ca58450393be883b2363dd25",
+                "model_name": "卫生间",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/a3446d42da21cfd69c6d4f33401698de/5245e8c3013ab6abf76c7cdba53443003aa4d4772a7d7aa1e136dace99339e07.safetensors",
+                        "version_file_name": "Toilet_20240223171242-000019.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/33d0f870911c14020348249cf5f7a01584e80176aaf7050192b16e0f2f4bb16d.png",
+                        "version_name": "v1.5",
+                        "version_download_count": 380,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/37b0214ff170449a9c22469b8879d581/20240116-1705383919978-0001.safetensors",
+                        "version_file_name": "20240116-1705383919978-0001",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/03abdf369ff1bdac18f18482c26ecb140cf8f07e648e200d61c17761f93bc6e4.png",
+                        "version_name": "卫生间v1.0",
+                        "version_download_count": 139,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "d9eff573d2b94bffa09fd45ebde789b1",
+                "model_name": "Italian_style_意式风格",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/8b7400a5961e4c1d898dbb74e98d4c17/8300eb30a15a02e86cdb7d7428b5068881e28751cf631f0e80f2f15132ac1e1e.safetensors",
+                        "version_file_name": "意式极简.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/8b7400a5961e4c1d898dbb74e98d4c17/b7fc3fab1bbdfbba094ee6920857d72b2b8f997748d81d13220cb40555839a6c.png",
+                        "version_name": "Italian_style",
+                        "version_download_count": 181,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "1b32889fcf954df49a0c20ac7df8a72d",
+                "model_name": "现代中式枯山水",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/ee3ad1b2a71c4255a40c2bda28624208/6713bef5f38c6ac46c8eb86a5813a6d17633f62f2ced757e3ec739b69c27ba75.safetensors",
+                        "version_file_name": "中式枯山水.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/ee3ad1b2a71c4255a40c2bda28624208/1ece1e878bb9015fbf8d86f54197182c31e6f52dac38d48985772e02aff8dc62.png",
+                        "version_name": "现代中式枯山水景观",
+                        "version_download_count": 16,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "f4aef93aff3243298f88479e856b2014",
+                "model_name": "店铺门头",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/9d7be7d23ae74996907ae610c7f945b8/44f8e259056fd530e279df625df8c270227fbca500abf67ab7cad8c349131451.safetensors",
+                        "version_file_name": "storefront.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/9d7be7d23ae74996907ae610c7f945b8/4b6dfd951c8f03021379a7951ea0423fb367b15044901d053ca35a5155da783a.png",
+                        "version_name": "1.0",
+                        "version_download_count": 99,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "476167f307a64e478aaac9f91c39a985",
+                "model_name": "SHM-现代浅木色展厅",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/14d112a1bf1041149d3493f19e2c7462/7d38c916b54072d8326291809fe5b3a4a349a9c5e221ce6909e540df0c40b46e.safetensors",
+                        "version_file_name": "zt.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/14d112a1bf1041149d3493f19e2c7462/6234f06561dba5c6beaf641ac20cf007cff2af5f0e69d228d96053682eab289d.png",
+                        "version_name": "SHM-现代浅木色展厅v1",
+                        "version_download_count": 232,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "efc9dc573dca2250d797fea0173d13bd",
+                "model_name": "老王MIR建筑表现风格增强",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/fd7e811a640cceaa436275f4c65929216b3a75632da2f1bcb0146549f88f838a.safetensors",
+                        "version_file_name": "lw-MIRV0.1测试版.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/648859b755fa4.png",
+                        "version_name": "V0.1",
+                        "version_download_count": 2553,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "56f462f7036747e78b1b73fbd83f3f89",
+                "model_name": "红砖艺术-室内",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/f63dcbd6661149e899903793b7969c7c/d10e18df80d21afaf322d789ac6097310eaa8e27a9060643816557cf605c0433.safetensors",
+                        "version_file_name": "艺术红砖-室内.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/f63dcbd6661149e899903793b7969c7c/1a9107855a81d434715052e223bc43b83235adaa3350352df09af7ebf512d049.png",
+                        "version_name": "红砖艺术-室内",
+                        "version_download_count": 267,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "c61bf6585d0a477ab0584e8a9c2aa69f",
+                "model_name": "SDS_电商质感室内背景",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/54e46629d213b09dcaa0f6891df5eb79/23be848f5035b424724431b72fd9cc068e5fc8bdc3fc044a82db2a3b6e2557ce.safetensors",
+                        "version_file_name": "SDS_质感室内背景.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/54e46629d213b09dcaa0f6891df5eb79/04cbe350785d0d5f5d14818ad4ec01271d670d05a7c1f95db8e2659a3d6a9f44.jpg",
+                        "version_name": "1.0",
+                        "version_download_count": 2370,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "5294775e1d6149e5bbf3728531b7a067",
+                "model_name": "室内设计精典大模型（老陈）",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1544180259934af6bc00fed12343a5cd/e86875fb13d3a4b72478d797f63aa74ade22a721b2aedd316d17209cf87627ff.safetensors",
+                        "version_file_name": "Lao_chen-000015.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1544180259934af6bc00fed12343a5cd/1e5747bffa2774c474cd23f5ad68d24e3ad79cc5b90c06ca51f612c7fd3fd960.jpg",
+                        "version_name": "V2.0",
+                        "version_download_count": 2106,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1544180259934af6bc00fed12343a5cd/1ea19115d5d76d8da9c758a5d53b955b99bfd908f0e0c1e4b84e8cb405e0ed5d.safetensors",
+                        "version_file_name": "Lao chen Color Plan-000015.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1544180259934af6bc00fed12343a5cd/f96baf837818cf74b6d15f3dd079c5e04fce3f2df454aae4a14b7e8916a60bca.jpg",
+                        "version_name": "V3.0",
+                        "version_download_count": 118,
+                        "version_base_type": "SD1.5"
+                    },
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1544180259934af6bc00fed12343a5cd/dd110a829a4fd4adb0301562ddf1f7bafc7b623efa1a9d047ad3ea57d445f410.safetensors",
+                        "version_file_name": "Lao_chen.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1544180259934af6bc00fed12343a5cd/bbf691a2dde06c8f719b1b87169dd048a20f669141b5f7e5c3e1b12386b31946.jpg",
+                        "version_name": "V1.0",
+                        "version_download_count": 18,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "1ce5cf32812241d793a7a59ecd5ab4a7",
+                "model_name": "异型建筑丨白色铝板丨内透灯光",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/ff9b5f4177bc461d8f1aa3235bdabbd0/20240124-1706079728981-0003.safetensors",
+                        "version_file_name": "20240124-1706079728981-0003",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/606cee5a77bec854497d4f4d74ac9c24fd6d84c81d3c6cdb9d8336e58a3dcdbd.png",
+                        "version_name": "异型建筑v1.0",
+                        "version_download_count": 709,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "518fb4a095654839876d78cf8d0c418c",
+                "model_name": "东南亚茅草竹建筑",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/eea4af9c54254e2f8efb2049ce8b2949/20240304-1709539217046-0001.safetensors",
+                        "version_file_name": "20240304-1709539217046-0001",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/train/model_images/eea4af9c54254e2f8efb2049ce8b2949/20240304-1709539217046_epoch_0001.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 19,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "3e8880a7b8bf4bbc827158f2316f0e34",
+                "model_name": "【SDXL】极简卧室",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/d3fbfd8bf75043098fd549eb5756e4c9/20240303-1709462186943-0020.safetensors",
+                        "version_file_name": "20240303-1709462186943-0005",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/cf93963caf974aab89617dcfef252266/a4708fd2b73f437c9ac250d165127b04bd36b8f60fcea1c6416c02330c8eb373.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 149,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "3d6a91cc3a4848beab271c9650029388",
+                "model_name": "绿意盎然丨绿金主题丨工装系列",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/2bf5416461614899b3ea5d31db6e7ce6/20240314-1710425071188-0013.safetensors",
+                        "version_file_name": "20240314-1710425071188-0013",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/90a7d7f256b873d986599c30491f72ad396bf4ec341b3a1c47aad6b631e01e96.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 75,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "38c0689d65484b48b8455ff73d29b075",
+                "model_name": "国内某知名公司Lora",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1a527597e6de04e50fd359ffe6ff8f5ec928bb2779d1202f2edb83b4c95e383c.safetensors",
+                        "version_file_name": "abmy-000015.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/a5b4c1a2ee27df394c1d9f3c73cbadb1d83bad0ed8e0439345e6cb7c41591537.png",
+                        "version_name": "V1.0",
+                        "version_download_count": 3076,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "0eb574a03ce145338af207d3d823c54c",
+                "model_name": "ASTRA_Nonlinear_V1 非线性异形造型",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/d14717b94429416180223dbee124c519/cc851bfe9864a0300c87bef99ed49e883de31f86dba64ac97031ee0ee3304431.safetensors",
+                        "version_file_name": "ASTRA_NonlinearV1.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/d14717b94429416180223dbee124c519/4ebccb1f19e51bc94766b80e36a9558c2e8e11f87d0738a2b8f9429e02b14f5f.png",
+                        "version_name": "ASTRA非线性异形造型-V1",
+                        "version_download_count": 1221,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "9d1ab3b5c75a44e5984683416217c88b",
+                "model_name": "现代企业展厅",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/14d112a1bf1041149d3493f19e2c7462/8dba43939827158270d5b380d3e2aa507faa34e43e2f0b999bdff0baa406b072.safetensors",
+                        "version_file_name": "企业展厅.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/14d112a1bf1041149d3493f19e2c7462/2577fae0c599522110239affeac6ab515df1b130851a88b189c716f387dbaec3.png",
+                        "version_name": "企业展厅1.0",
+                        "version_download_count": 722,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "eac712aeed904e92b67d42d99a592537",
+                "model_name": "景观植物之高尔夫草地森林",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/6cfe34cbd5214aa5993b9ec9a51c7b66/20240215-1707962822424-0002.safetensors",
+                        "version_file_name": "20240215-1707962822424-0002",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/f183393222cb4175bb77ddf867eda705/3fbe0ea7557be5295f28148e15012d01d3707cb7584c1da12b6cc366633913e1.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 224,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "884b067953e94100940c792a4a95178e",
+                "model_name": "lwsh-老王建筑手绘风格",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/782a1fe63d246df1bcc4d4aaacf008e9f01b634c0d416721b2f7eb4f3423c9b2.safetensors",
+                        "version_file_name": "LWSH-V0.2.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/be4696c961a572f098ff285d54e6d43030253d783d4bfd6df43be7ce17ade3bd.png",
+                        "version_name": "V0.2",
+                        "version_download_count": 2490,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "3e55b9d2012445f187691a91fb6b029a",
+                "model_name": "ASTRA_Resident_Regular_V1 常规住宅",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/d14717b94429416180223dbee124c519/fea9feadf564b12a25b3c6599645863fecfc68aaf0058f67fa1aaefd65200293.safetensors",
+                        "version_file_name": "Astra_Resident_Regular_v1.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/d14717b94429416180223dbee124c519/2716467be2b65ee7b45c0cb08b55633ca3d9fbbf6c047142a7e722e0a52c523b.png",
+                        "version_name": "ASTRA常规住宅v1.0",
+                        "version_download_count": 1304,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "a129f0e72955432ca16866aa4c0fbefd",
+                "model_name": "室内设计彩平图-彩色平面图（老陈）",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1544180259934af6bc00fed12343a5cd/8fb614c69e9a0d145c7d3cac3a1d669318224fcc5a31d279916386a5cdeed738.safetensors",
+                        "version_file_name": "20240112-1705043340770-0010.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1544180259934af6bc00fed12343a5cd/a4174d85cd2cd4365cf426a02c2bac66d6528f0702915e2739566c44cf32ec5f.jpg",
+                        "version_name": "V2.0",
+                        "version_download_count": 1216,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "66bc7161941e4955ae428e358a921028",
+                "model_name": "UIA建筑|奇思妙想_Architectural photo",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/35e4f09979b84838bda275c980ac352b/ec51035b93ee641be68f0d7dc88994911d24b82ea1df7240853ad66cfccc319d.safetensors",
+                        "version_file_name": "UIA城市鸟瞰 Aerial view of the city.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/35e4f09979b84838bda275c980ac352b/1ebac00d451a8a98f0ef864e7669cf31db612ed94a01ae2ee89c08edc7beffb0.png",
+                        "version_name": "1.0",
+                        "version_download_count": 2022,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "a11a6cbe9d574a14b8b670f21e077a26",
+                "model_name": "极简原木风",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1f432a6f8896429ea1a1e6f9238ec29f/74a1c837b20fa3912a658187111d8f5b7186a3beb05af7249b663a96001c4b56.safetensors",
+                        "version_file_name": "acaiy_minimalist_1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/1f432a6f8896429ea1a1e6f9238ec29f/92ad7e59556e78ef956ef19d3a1052d193aa07aad60c9169fe4e4e0786619e9e.png",
+                        "version_name": "0.2",
+                        "version_download_count": 32,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "21ad28b14d8d4ff4ac387bad1141150e",
+                "model_name": "黑白极简丨室内风格丨电商小景",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/0f36ae0db45e4421a1b33378fe2bad93/20240201-1706778933574-0009.safetensors",
+                        "version_file_name": "20240201-1706778933574-0009",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/f15401d574f308b4a32667e67cc11868a7c3d23bb287cf59d232ca58ba035bb1.png",
+                        "version_name": "黑白极简v1.0",
+                        "version_download_count": 973,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "5c3f800a7c0c44dd9484d1e7cf48bd1d",
+                "model_name": "MIR建筑表现-SDXL1.0",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/1d0f2b1a04a5d20ee5ea28c832257883fc8cc4e52012a6698ec686e6cb9105c1.safetensors",
+                        "version_file_name": "lwmirXL-V1.0.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/web/60de08679d3ed4b26a600c534bed74886323f41d7b909e29b381123ed08a02d5.png",
+                        "version_name": "XL1.0",
+                        "version_download_count": 1829,
+                        "version_base_type": "SDXL"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "7353557a57584f109cd7c80ce18ea538",
+                "model_name": "写实建筑效果",
+                "model_type": "Checkpoint",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/72f16118bc30a90fb6a8b27b5ad58d93b8f0dfdc124d66c697101c04e75f89c9.safetensors",
+                        "version_file_name": "TTSLB_Archi_v1.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/d9bf1634887c4686604db344f58a77f6f8c0b6aac21e9dcbac1045fb4f4ffdc8.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 2567,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "8699fa69344240b9884db3d551e1850b",
+                "model_name": "现代化办公室SD1.5",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/train/models/920b1d5b3d244eec9a1830a0292d2ad3/20240219-1708311549958-0020.safetensors",
+                        "version_file_name": "20240219-1708311549958-0020",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/img/a3446d42da21cfd69c6d4f33401698de/d9fc6e7b85dd6cfdbf56d7d0eaca934cce56f6c2f11a6f1aa3fd8e6985a81c27.png",
+                        "version_name": "v1.0",
+                        "version_download_count": 687,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        },
+        {
+            "model": {
+                "model_uuid": "7936c29a5d64451e99f8c27ca9315e3b",
+                "model_name": "城市鸟瞰图 | UrbanAerial",
+                "model_type": "LoRA",
+                "versions": [
+                    {
+                        "version_file_url": "https://liblibai-online.vibrou.com/web/model/e00bb0e156b3be059469617194673c508ad92afa9f5458789e1ec07591746d76.safetensors",
+                        "version_file_name": "UrbanAerial_V2.safetensors",
+                        "version_cover_image": "https://liblibai-online.vibrou.com/d0512a868d69d92ede47d8a93503b8d13cf5fb565bb88a1fa0e4e216fb3ec403.png",
+                        "version_name": "v2",
+                        "version_download_count": 1961,
+                        "version_base_type": "SD1.5"
+                    }
+                ]
+            }
+        }
+    ]
+}
