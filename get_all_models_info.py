@@ -1,3 +1,4 @@
+import time
 import requests, json, math
 
 base_url = "https://liblib-api.vibrou.com/api/www/model/search"
@@ -75,8 +76,8 @@ def get_all_uuids(total_number):
 
     all_uuids = []
 
-    # for page in range(1, total_pages + 1):
-    for page in range(1, 3 + 1):
+    for page in range(1, total_pages + 1):
+    # for page in range(1, 3 + 1):
         data = {
             "page": page,
             "pageSize": 50,
@@ -86,6 +87,7 @@ def get_all_uuids(total_number):
             "tagV2Id": 100033,  # tagV2Id=100033 表示建筑类
         }
         response = lib_request(base_url, data)
+        time.sleep(0.1)
 
         # 检查请求是否成功
         if response.status_code == 200:
@@ -116,6 +118,7 @@ def get_all_uuids(total_number):
     print(
         f"共有{len(all_uuids)}个模型，其中CHECKPOINT类型{num_of_checkpoint_models}个，LORA类型{num_of_lora_models}个"
     )
+    
     # 返回所有提取的uuid
     return all_uuids
 
@@ -126,6 +129,7 @@ def get_model_info_by_uuid(uuid):
 
     data = {}
     response = lib_request(model_query_url + uuid, data).json()
+    time.sleep(0.1)
 
     model_uuid = response["data"]["uuid"]
     model_name = response["data"]["name"]
@@ -188,6 +192,7 @@ def get_all_models_info(uuids):
         model = get_model_info_by_uuid(uuid)
         if model is not None:
             all_models_info.append({"model": json.loads(model)})
+        # time.sleep(0.1)
 
     merged_json_data = {"models": all_models_info}
     print(f"有{num_of_not_downloadable}个模型（或版本）不让下载")
