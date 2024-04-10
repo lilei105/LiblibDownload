@@ -1,10 +1,14 @@
-import json, os, subprocess, re
+import json, os, subprocess, re, datetime
+from dateutil.tz import tzutc
 
 # 指定根文件夹，请修改成自己要存的目录，注意留够硬盘空间
-root_folder = "E:\\Liblib\\"
+root_folder = "D:\\Liblib\\"
 
 # 100033代表“建筑与空间设计”类别，其他类别请修改
 model_category = "100033"
+
+# 获取当前时间，带时区信息
+now = datetime.datetime.now(tzutc())
 
 
 def download_file(url, file_path):
@@ -65,6 +69,24 @@ for model_data in data["models"]:
         version_folder = os.path.join(model_folder, version_name)
         if not os.path.exists(version_folder):
             os.makedirs(version_folder)
+        
+        # 比较version_create_time
+        # version_create_time = datetime.datetime.fromisoformat(version["version_create_time"])
+        # version_create_time = version_create_time.replace(tzinfo=tzutc())
+        # if (now - version_create_time).days < 30:
+        #     print(f"{model_name} 的 {version_name} 版本是菜鸟，出来还不足一个月，先不下载它")
+        #     continue  # 如果version_create_time比当前时间早于一个月以上，则跳过下载
+
+        # 如果下载量小于100则跳过下载
+        version_download_count = version["version_download_count"]
+        if version_download_count < 100:
+            print(f"{model_name} 的 {version_name} 版本下载量不足100，不理它。")
+            continue
+
+        # 创建description.txt文件
+        description_file = os.path.join(version_folder, "description.txt")
+        with open(description_file, "w", encoding="utf-8") as desc_file:
+            desc_file.write(version["version_description"]+"\n")
 
         # 下载version_cover_image并重命名
         image_url = version["version_cover_image"]
