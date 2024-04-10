@@ -9,15 +9,9 @@ num_of_checkpoint_models = 0
 num_of_lora_models = 0
 num_of_not_downloadable = 0
 
-model_type_mapping = {
-    1: "Checkpoint",
-    5: "LoRA"
-}
+model_type_mapping = {1: "Checkpoint", 5: "LoRA"}
 
-base_type_mapping = {
-    1: "SD1.5",
-    3: "SDXL"
-}
+base_type_mapping = {1: "SD1.5", 3: "SDXL"}
 
 
 def lib_request(url, data):
@@ -78,11 +72,11 @@ def get_all_uuids(total_number):
 
     all_uuids = []
 
-    for page in range(1, total_pages + 1):
-    # for page in range(1, 3 + 1):
+    # for page in range(1, total_pages + 1):
+    for page in range(1, 1 + 1):
         data = {
             "page": page,
-            "pageSize": 50,
+            "pageSize": 20,
             "sort": 0,
             "models": [],
             "types": [],
@@ -120,7 +114,7 @@ def get_all_uuids(total_number):
     print(
         f"共有{len(all_uuids)}个模型，其中CHECKPOINT类型{num_of_checkpoint_models}个，LORA类型{num_of_lora_models}个"
     )
-    
+
     # 返回所有提取的uuid
     return all_uuids
 
@@ -149,8 +143,10 @@ def get_model_info_by_uuid(uuid):
             version_file_name = version["attachment"]["modelSourceName"]
             version_cover_image = version["imageGroup"]["coverUrl"]
             version_name = version["name"]
-            version_download_count = version['downloadCount']
-            version_base_type = version['baseType']
+            version_download_count = version["downloadCount"]
+            version_base_type = version["baseType"]
+            version_description = version["versionDesc"]
+            version_create_time = version["createTime"]
 
             # 创建一个字典来存储当前版本的信息
             version_info = {
@@ -159,8 +155,9 @@ def get_model_info_by_uuid(uuid):
                 "version_cover_image": version_cover_image,
                 "version_name": version_name,
                 "version_download_count": version_download_count,
-                "version_base_type": base_type_mapping.get(version_base_type, "Unknown"),
-                # "version_description": version_description,
+                "version_base_type": base_type_mapping.get(version_base_type, "Other"),
+                "version_description": version_description,
+                "version_create_time": version_create_time,
             }
 
             # 将当前版本的字典添加到列表中
