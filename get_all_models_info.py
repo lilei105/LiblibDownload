@@ -72,11 +72,11 @@ def get_all_uuids(total_number):
 
     all_uuids = []
 
-    # for page in range(1, total_pages + 1):
-    for page in range(1, 1 + 1):
+    for page in range(1, total_pages + 1):
+    # for page in range(1, 1 + 1):
         data = {
             "page": page,
-            "pageSize": 20,
+            "pageSize": 50,
             "sort": 0,
             "models": [],
             "types": [],
