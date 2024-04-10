@@ -1,7 +1,7 @@
 import time
 import requests, json
 
-model_category = 100033
+model_category = "100033"
 
 base_url = "https://liblib-api.vibrou.com/api/www/model/search"
 model_query_url = "https://liblib-api.vibrou.com/api/www/model/getByUuid/"

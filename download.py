@@ -4,7 +4,7 @@ import json, os, subprocess, re
 root_folder = "E:\\Liblib\\"
 
 # 100033代表“建筑与空间设计”类别，其他类别请修改
-model_category = 100033
+model_category = "100033"
 
 
 def download_file(url, file_path):
