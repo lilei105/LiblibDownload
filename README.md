@@ -1,5 +1,6 @@
 # LiblibDownload
-传闻说哩布哩布即将关闭免费下载模型，那就赶紧写个脚本来下载吧
+传闻说哩布哩布即将关闭免费下载模型，那就赶紧写个脚本来下载吧。
+用得上的话右上角给点个星星:D
 
 # 文件介绍
 
@@ -31,3 +32,8 @@ https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win
 3. 用编辑器打开get_all_models_info.py，在代码最头上有model_category = 100033字样，这是预先写死的下载“建筑与空间设计”类别。如果需要下载别的类别请自行替换相应的category代码。
 4. 命令行运行python get_all_models_info.py，静等大概十几分钟，会获得一个all_models_100033.json这样的json文件。命令行上会有一些输出，不会太无聊的。其实哩布也不是每天增加一堆模型，所以你只要建筑类的模型的话，可以跳过这一步，直接用all_models_100033.json就行
 5. 命令行运行python download.py，会自动根据上面的json文件来下载。
+
+
+# 备注
+
+1. 家里网够快，想多线程下载的话，aria2支持，在download.py的download_file里的command那里加入一行 "-j 4" 就行，意思是指定4个线程下载
