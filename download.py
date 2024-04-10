@@ -1,7 +1,10 @@
 import json, os, subprocess, re
 
-# 指定根文件夹
+# 指定根文件夹，请修改成自己要存的目录，注意留够硬盘空间
 root_folder = "E:\\Liblib\\"
+
+# 100033代表“建筑与空间设计”类别，其他类别请修改
+model_category = 100033
 
 
 def download_file(url, file_path):
@@ -25,7 +28,8 @@ def download_file(url, file_path):
 
 
 # 读取JSON文件
-with open("all_models_100033.json", "r", encoding="utf-8") as f:
+file_name = "all_models_" + model_category + ".json"
+with open(file_name, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # 遍历models数组
