@@ -1,5 +1,7 @@
 import time
-import requests, json, math
+import requests, json
+
+model_category = 100033
 
 base_url = "https://liblib-api.vibrou.com/api/www/model/search"
 model_query_url = "https://liblib-api.vibrou.com/api/www/model/getByUuid/"
@@ -84,7 +86,7 @@ def get_all_uuids(total_number):
             "sort": 0,
             "models": [],
             "types": [],
-            "tagV2Id": 100033,  # tagV2Id=100033 表示建筑类
+            "tagV2Id": model_category,  # tagV2Id=100033 表示建筑类
         }
         response = lib_request(base_url, data)
         time.sleep(0.1)
@@ -201,8 +203,9 @@ def get_all_models_info(uuids):
 
 
 # 主入口
-total_number = get_total_number(models=[], types=[], tagV2Id=100033)
+total_number = get_total_number(models=[], types=[], tagV2Id=model_category)
 uuids = get_all_uuids(total_number)
 all_models_info = get_all_models_info(uuids)
-with open("all_models_100033.json", "w", encoding="utf-8") as json_file:
+file_name = "all_models_" + model_category + ".json"
+with open(file_name, "w", encoding="utf-8") as json_file:
     json.dump(all_models_info, json_file, ensure_ascii=False, indent=4)
