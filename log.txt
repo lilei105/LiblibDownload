@@ -1,4 +1,4 @@
-C:\Users\tony\OneDrive - Kongkong Cloud\桌面\liblib> python .\get_all_models_info.py
+C:\Users\tony\桌面\liblib> python .\get_all_models_info.py
 共有1700个模型数据
 分页获取需要35页
 正在统计模型数量

@@ -69,7 +69,7 @@ for model_data in data["models"]:
         version_folder = os.path.join(model_folder, version_name)
         if not os.path.exists(version_folder):
             os.makedirs(version_folder)
-        
+
         # 比较version_create_time
         # version_create_time = datetime.datetime.fromisoformat(version["version_create_time"])
         # version_create_time = version_create_time.replace(tzinfo=tzutc())
@@ -81,12 +81,15 @@ for model_data in data["models"]:
         version_download_count = version["version_download_count"]
         if version_download_count < 100:
             print(f"{model_name} 的 {version_name} 版本下载量不足100，不理它。")
+            description_file = os.path.join(version_folder, "下载量不足100.txt")
+            with open(description_file, "w", encoding="utf-8") as desc_file:
+                desc_file.write("该版本下载量过少，所以不予下载。可以从这里手工下载：\n" + version["version_file_url"] + "\n")
             continue
 
         # 创建description.txt文件
         description_file = os.path.join(version_folder, "description.txt")
         with open(description_file, "w", encoding="utf-8") as desc_file:
-            desc_file.write(version["version_description"]+"\n")
+            desc_file.write(version["version_description"] + "\n")
 
         # 下载version_cover_image并重命名
         image_url = version["version_cover_image"]
