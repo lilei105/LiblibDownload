@@ -71,19 +71,19 @@ for model_data in data["models"]:
             os.makedirs(version_folder)
 
         # 比较version_create_time
-        # version_create_time = datetime.datetime.fromisoformat(version["version_create_time"])
-        # version_create_time = version_create_time.replace(tzinfo=tzutc())
+        version_create_time = datetime.datetime.fromisoformat(version["version_create_time"])
+        version_create_time = version_create_time.replace(tzinfo=tzutc())
         # if (now - version_create_time).days < 30:
         #     print(f"{model_name} 的 {version_name} 版本是菜鸟，出来还不足一个月，先不下载它")
         #     continue  # 如果version_create_time比当前时间早于一个月以上，则跳过下载
 
         # 如果下载量小于100则跳过下载
         version_download_count = version["version_download_count"]
-        if version_download_count < 100:
-            print(f"{model_name} 的 {version_name} 版本下载量不足100，不理它。")
-            description_file = os.path.join(version_folder, "下载量不足100.txt")
+        if version_download_count < 100 or (now - version_create_time).days < 30:
+            print(f"{model_name} 的 {version_name} 版本太新或下载量太少，不理它。")
+            description_file = os.path.join(version_folder, "模型文件呢.txt")
             with open(description_file, "w", encoding="utf-8") as desc_file:
-                desc_file.write("该版本下载量过少，所以不予下载。可以从这里手工下载：\n" + version["version_file_url"] + "\n")
+                desc_file.write("该版本太新或下载量太少，所以不予下载。可以从这里手工下载：\n" + version["version_file_url"] + "\n")
             continue
 
         # 创建description.txt文件

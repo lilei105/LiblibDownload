@@ -36,4 +36,4 @@ https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win
 
 # 备注
 
-1. 家里网够快，想多线程下载的话，aria2支持，在download.py的download_file里的command那里加入一行 "-j 4" 就行，意思是指定4个线程下载
+根据群友要求加入了“下载量小于100的不要下载”和“发布时间没超过一个月的不要下载”功能
