@@ -29,11 +29,12 @@ https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win
 
 1. 没有python的话先安装python。
 2. 下载代码，存到某个目录里并进入目录。
-3. 用编辑器打开get_all_models_info.py，在代码最头上有model_category = 100033字样，这是预先写死的下载“建筑与空间设计”类别。如果需要下载别的类别请自行替换相应的category代码。
+3. 用编辑器打开get_all_models_info.py，在代码最头上有model_category = 100033字样，这是默认的下载“建筑与空间设计”类别。如果需要下载别的类别请自行替换相应的category代码。
 4. 命令行运行python get_all_models_info.py，静等大概十几分钟，会获得一个all_models_100033.json这样的json文件。命令行上会有一些输出，不会太无聊的。其实哩布也不是每天增加一堆模型，所以你只要建筑类的模型的话，可以跳过这一步，直接用all_models_100033.json就行
 5. 命令行运行python download.py，会自动根据上面的json文件来下载。
 
 
 # 备注
 
-根据群友要求加入了“下载量小于100的不要下载”和“发布时间没超过一个月的不要下载”功能
+1. 根据群友要求加入了“下载量小于100的不要下载”和“发布时间没超过一个月的不要下载”功能‘
+2. 如果需要查询不是“建筑与空间设计”的其他类别，请在运行get_all_models_info.py之前修改文件头部的“tagsV2Id=”部分，修改成什么值可以参见“查询用的参数见这里.json”

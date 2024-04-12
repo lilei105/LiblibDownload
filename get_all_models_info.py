@@ -1,6 +1,8 @@
 import time
 import requests, json
 
+# 100033表示建筑类
+# 其它可选的值参见“查询用的参数见这里.json”
 model_category = "100033"
 
 base_url = "https://liblib-api.vibrou.com/api/www/model/search"
@@ -41,6 +43,8 @@ def lib_request(url, data):
 # models=1 表示Checkpoint
 # models=5 表示LoRA
 # tagV2Id=100033 表示建筑类
+# models和types不建议改，因为哩布基本就这两种
+# tagsV2Id如需修改参见“查询用的参数见这里.json”
 def get_total_number(models, types, tagV2Id):
     data = {
         "page": 1,
@@ -125,7 +129,9 @@ def get_model_info_by_uuid(uuid):
 
     data = {}
     response = lib_request(model_query_url + uuid, data).json()
-    time.sleep(0.1)
+    
+    # 间隔半秒再接着爬，要不然容易到连接限制
+    time.sleep(0.5)
 
     model_uuid = response["data"]["uuid"]
     model_name = response["data"]["name"]
