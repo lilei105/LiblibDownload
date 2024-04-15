@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 
 # 100033表示建筑类
 # 其它可选的值参见“查询用的参数见这里.json”
-model_tag = 100085
+model_tag = None
 
 base_url = "https://liblib-api.vibrou.com/api/www/model/search"
 model_query_url = "https://liblib-api.vibrou.com/api/www/model/getByUuid/"
@@ -97,6 +97,7 @@ def create_db():
                     ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
                     ("uuid", "TEXT UNIQUE"),
                     ("name", "TEXT"),
+                    ("extracted", "INTEGER"),
                     ("author", "TEXT"),
                     ("type", "TEXT"),
                     ("type_name", "TEXT"),
@@ -129,7 +130,7 @@ def create_db():
                     ("version_name", "TEXT"),
                 ],
             ),
-            ("failed", [("id", "INTEGER PRIMARY KEY AUTOINCREMENT"), ("uuid", "TEXT")]),
+            ("failed", [("id", "INTEGER PRIMARY KEY AUTOINCREMENT"), ("uuid", "TEXT UNIQUE")]),
         ]
 
         for table_name, columns in table_definitions:
@@ -147,6 +148,7 @@ def create_db():
 
 
 # 封装一个通用的liblib api查询请求
+# 放心没有任何个人信息相关的参数
 def lib_request(url, data):
     headers = {
         "Host": "liblib-api.vibrou.com",
@@ -196,7 +198,7 @@ def get_total_number(models, types, tagV2Id):
                 (total_number, formatted_time),
             )
             conn.commit()
-            print(f"共有{total_number}个模型数据")
+            print(f"tag为“{tagV2Id}”的模型数据共有{total_number}条")
 
         else:
             printc("red", f"获取模型数量时http返回数据出错，http错误代码{response.status_code}")
@@ -265,6 +267,7 @@ def get_uuids_for_page(page):
         response = lib_request(base_url, data)
         time.sleep(0.5)
 
+        # 来了不多于50条uuid
         if response.status_code == 200:
             data = response.json()
             data_num = len(data["data"]["data"])
@@ -282,11 +285,12 @@ def get_uuids_for_page(page):
                 baseType = data["data"]["data"][num]["baseType"][0]
                 baseTypeName = convert_base_type_to_name(baseType)
                 c.execute(
-                    "INSERT OR IGNORE INTO model (uuid, name, author, type, type_name, base_type, base_type_name) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT OR IGNORE INTO model (uuid, name, author, extracted, type, type_name, base_type, base_type_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                     (
                         uuid,
                         name,
                         nickname,
+                        0,
                         modelType,
                         modelTypeName,
                         baseType,
@@ -329,8 +333,8 @@ def get_all_uuids(total_number):
     # total_pages = 2
 
     print(f"分页获取需要{total_pages}页")
-    # print("正在插入模型数据到数据库")
-
+    
+    # 分页获取时不能多线程，否则在较多页数之后会获取到空数据
     with ThreadPoolExecutor(max_workers=1) as executor:
         futures = [
             executor.submit(get_uuids_for_page, page)
@@ -352,6 +356,14 @@ def get_model_info_by_uuid(uuid):
     # print(f"正在处理uuid：{uuid}")
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
+    
+    # 检查UUID是否已存在于数据库的'model'表中
+    c.execute("SELECT uuid FROM model WHERE uuid = ? AND extracted = 1", (uuid,))
+    existing_uuid = c.fetchone()
+    
+    if existing_uuid:
+        # print(f"UUID {uuid} already exists in the database.")
+        return
 
     try:
         data = {}
@@ -398,10 +410,6 @@ def get_model_info_by_uuid(uuid):
                 )
                 conn.commit()
                 
-                c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
-                conn.commit()
-                
-
             else:
                 printc("gray", f"这个模型（版本）不让下载：{uuid}，名称：{model_name}，版本：{version['name']}")
                 # 将不让下载的模型的UUID插入到 'not_downloadable' 表中
@@ -411,13 +419,17 @@ def get_model_info_by_uuid(uuid):
                 )
                 conn.commit()
                 
-                c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
-                conn.commit()
+            c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
+            conn.commit()
+                
+            # 在插入操作之后，更新 'model' 表中对应的 'extracted' 字段为1
+            c.execute("UPDATE model SET extracted = 1 WHERE uuid = ?", (uuid,))
+            conn.commit()
 
     except Exception as e:
         printc("red", f"在获取{uuid}时发生了错误：{type(e).__name__}")
 
-        c.execute("INSERT INTO failed (uuid) VALUES (?)", (uuid,))
+        c.execute("INSERT OR IGNORE INTO failed (uuid) VALUES (?)", (uuid,))
         conn.commit()
 
     finally:
@@ -465,6 +477,7 @@ def get_all_models_info(uuid_list):
             except Exception as e:
                 # printc("red", f"多线程获取{uuid}包含的模型信息时发生错误: {e}")
                 print("", end="", flush=True)
+    print(f"=====================获取完毕=====================")
 
 
 def process_failed():
