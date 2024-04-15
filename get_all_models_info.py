@@ -1,36 +1,161 @@
-import time
-import requests, json
+import time, requests, json, os, sqlite3
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
+
 
 # 100033表示建筑类
 # 其它可选的值参见“查询用的参数见这里.json”
-model_category = "100033"
+model_tag = 100085
 
 base_url = "https://liblib-api.vibrou.com/api/www/model/search"
 model_query_url = "https://liblib-api.vibrou.com/api/www/model/getByUuid/"
-num_of_checkpoint_models = 0
-num_of_lora_models = 0
-num_of_not_downloadable = 0
+tag_query_url = "https://liblib-api.vibrou.com/api/www/public/tag/v2/search"
 
-model_type_mapping = {1: "Checkpoint", 5: "LoRA"}
-
-base_type_mapping = {1: "SD1.5", 3: "SDXL"}
+db_file = "models.db"
 
 
+# 彩色输出的颜色代码
+EXTENDED_ANSI_COLORS = {
+    # 基本颜色
+    "black": "\033[30m",
+    "red": "\033[31m",
+    "green": "\033[32m",
+    "yellow": "\033[33m",
+    "blue": "\033[34m",
+    "magenta": "\033[35m",
+    "cyan": "\033[36m",
+    "white": "\033[37m",
+    # 亮色
+    "bright_black": "\033[90m",
+    "bright_red": "\033[91m",
+    "bright_green": "\033[92m",
+    "bright_yellow": "\033[93m",
+    "bright_blue": "\033[94m",
+    "bright_magenta": "\033[95m",
+    "bright_cyan": "\033[96m",
+    "bright_white": "\033[97m",
+    # 其他颜色
+    "orange": "\033[38;5;208m",  # 256色中的橙色
+    "purple": "\033[38;5;93m",  # 256色中的紫色
+    "brown": "\033[38;5;94m",  # 256色中的棕色
+    "pink": "\033[38;5;207m",  # 256色中的粉色
+    "gray": "\033[38;5;244m",  # 256色中的灰色
+    # 重置代码
+    "reset": "\033[0m",
+}
+
+
+def printc(color, text):
+    """
+    打印彩色文本的函数。
+
+    :param color: 颜色名称，必须是ANSI_COLORS字典中的一个键。
+    :param text: 要打印的文本。
+    """
+    # 打印彩色文本
+    print(f"{EXTENDED_ANSI_COLORS[color]}{text}{EXTENDED_ANSI_COLORS['reset']}")
+    
+
+# 创建数据表的函数
+def create_table(conn, table_name, columns):
+    column_definitions = ", ".join(f"{name} {data_type}" for name, data_type in columns)
+    create_table_sql = f"CREATE TABLE IF NOT EXISTS {table_name} ({column_definitions})"
+    conn.execute(create_table_sql)
+
+
+# 创建数据库文件，并调用创建表的函数来创建所有数据表
+def create_db():
+    # 检查数据库文件是否存在
+    if os.path.exists(db_file):
+        print("数据库已存在，跳过创建步骤。")
+        return
+
+    # 连接到SQLite数据库
+    conn = sqlite3.connect(db_file)
+    try:
+        # 执行创建表的操作
+        table_definitions = [
+            (
+                "info",
+                [
+                    ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                    ("count", "INTEGER"),
+                    ("last_run", "DATE"),
+                ],
+            ),
+            (
+                "tag",
+                [
+                    ("id", "INTEGER PRIMARY KEY"),
+                    # ("number", "INTEGER"),
+                    ("name", "TEXT"),
+                ],
+            ),
+            (
+                "model",
+                [
+                    ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                    ("uuid", "TEXT UNIQUE"),
+                    ("name", "TEXT"),
+                    ("author", "TEXT"),
+                    ("type", "TEXT"),
+                    ("type_name", "TEXT"),
+                    ("base_type", "TEXT"),
+                    ("base_type_name", "TEXT"),
+                    ("tags", "TEXT"),
+                ],
+            ),
+            (
+                "version",
+                [
+                    ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                    ("url", "TEXT"),
+                    ("file_name", "TEXT"),
+                    ("cover_image", "TEXT"),
+                    ("name", "TEXT"),
+                    ("download_count", "INTEGER"),
+                    ("run_count", "INTEGER"),
+                    ("base_type", "TEXT"),
+                    ("description", "TEXT"),
+                    ("create_time", "DATE"),
+                ],
+            ),
+            (
+                "not_downloadable",
+                [
+                    ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                    ("uuid", "TEXT"),
+                    ("model_name", "TEXT"),
+                    ("version_name", "TEXT"),
+                ],
+            ),
+            ("failed", [("id", "INTEGER PRIMARY KEY AUTOINCREMENT"), ("uuid", "TEXT")]),
+        ]
+
+        for table_name, columns in table_definitions:
+            create_table(conn, table_name, columns)
+
+        # 提交事务
+        conn.commit()
+
+        print(f"已经创建数据库文件{db_file}")
+    except sqlite3.Error as e:
+        printc("red", f"创建数据库失败：{e}")
+    finally:
+        # 关闭数据库连接
+        conn.close()
+
+
+# 封装一个通用的liblib api查询请求
 def lib_request(url, data):
     headers = {
         "Host": "liblib-api.vibrou.com",
         "Connection": "keep-alive",
-        "Content-Length": "64",
-        "sec-ch-ua": '"Microsoft Edge";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
-        "sec-ch-ua-mobile": "?0",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0",
         "Content-Type": "application/json",
         "Accept": "application/json, text/plain, */*",
         "sec-ch-ua-platform": '"Windows"',
         "Origin": "https://www.liblib.art",
-        "Sec-Fetch-Site": "cross-site",
-        "Sec-Fetch-Mode": "cors",
-        "Sec-Fetch-Dest": "empty",
         "Referer": "https://www.liblib.art/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "zh,en-US;q=0.9,en;q=0.8,en-GB;q=0.7,zh-CN;q=0.6",
@@ -39,176 +164,323 @@ def lib_request(url, data):
     return response
 
 
-# 获得某个类别的模型总数
-# models=1 表示Checkpoint
-# models=5 表示LoRA
+# 先做一个小的请求，获得某个类别的模型总数
+# models=1 表示Checkpoint，5 表示LoRA，等等
+# types表示SD1.5/SDXL等
 # tagV2Id=100033 表示建筑类
-# models和types不建议改，因为哩布基本就这两种
 # tagsV2Id如需修改参见“查询用的参数见这里.json”
 def get_total_number(models, types, tagV2Id):
-    data = {
-        "page": 1,
-        "pageSize": 10,
-        "models": models,
-        "types": types,
-        "tagV2Id": tagV2Id,
-    }
-    response = lib_request(base_url, data)
+    conn = sqlite3.connect(db_file)
+    total_number = 0
 
-    if response.status_code == 200:
-        json_data = response.json()
-        total_number = json_data["data"]["total"]
-        print(f"共有{total_number}个模型数据")
-    else:
-        print(f"获取模型数量时出错，错误代码{response.status_code}")
+    try:
+        cursor = conn.cursor()
+        data = {
+            "page": 1,
+            "pageSize": 10,
+            "models": models,
+            "types": types,
+            "tagV2Id": tagV2Id,
+        }
+        response = lib_request(base_url, data)
+
+        if response.status_code == 200:
+            json_data = response.json()
+            total_number = json_data["data"]["total"]
+            
+            current_utc_time = datetime.now(timezone.utc)
+            formatted_time = current_utc_time.strftime('%Y-%m-%dT%H:%M:%S.000+00:00')
+            # current_date = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + '+00:00'
+            cursor.execute(
+                "INSERT INTO info (count, last_run) VALUES (?, ?)",
+                (total_number, formatted_time),
+            )
+            conn.commit()
+            print(f"共有{total_number}个模型数据")
+
+        else:
+            printc("red", f"获取模型数量时http返回数据出错，http错误代码{response.status_code}")
+    except Exception as e:
+        printc("red", f"获取模型数量时发生错误: {e}")
+    finally:
+        cursor.close()
+        conn.close()
 
     return total_number
 
 
-# 根据模型总数，分页获取所有的模型uuid
-def get_all_uuids(total_number):
-    global num_of_checkpoint_models
-    global num_of_lora_models
+# 获取所有modelContent中的tag
+def get_tag_info():
+    conn = sqlite3.connect(db_file)
 
-    total_pages = total_number // 50 + 1
-    print(f"分页获取需要{total_pages}页")
-    print("正在统计模型数量")
+    try:
+        c = conn.cursor()
+        data = {"categoryCode": "modelContent", "page": 1, "pageSize": 50}
+        response = lib_request(tag_query_url, data)
 
-    all_uuids = []
+        if response.status_code == 200:
+            json_data = response.json()
+            tags = json_data["data"]["data"]
+            print(f"已获取{len(tags)}条tag")
+            for tag in tags:
+                id = tag["id"]
+                name = tag["name"]
+                c.execute(
+                    "INSERT OR IGNORE INTO tag (id, name) VALUES (?, ?)",
+                    (id, name),
+                )
+            conn.commit()
+            # conn.close()
 
-    for page in range(1, total_pages + 1):
-    # for page in range(1, 1 + 1):
+    except Exception as e:
+        printc("red", f"获取tag时发生错误: {e}")
+    finally:
+        c.close()
+        conn.close()
+
+
+def convert_base_type_to_name(number):
+    base_type_to_name = {
+        1: "SD1.5",
+        2: "SD2.1",
+        3: "SDXL",
+        4: "Cascade Stage a",
+        5: "Cascade Stage b",
+        6: "Cascade Stage c",
+    }
+    return base_type_to_name.get(number, "Unknown")
+
+
+# 获得每一页的50个uuid
+def get_uuids_for_page(page):
+    try:
         data = {
             "page": page,
             "pageSize": 50,
             "sort": 0,
             "models": [],
             "types": [],
-            "tagV2Id": model_category,  # tagV2Id=100033 表示建筑类
+            "tagV2Id": model_tag,
         }
         response = lib_request(base_url, data)
-        time.sleep(0.1)
+        time.sleep(0.5)
 
-        # 检查请求是否成功
         if response.status_code == 200:
-            # 解析JSON数据
             data = response.json()
             data_num = len(data["data"]["data"])
-            # print(f"本页共包含{data_num}条数据")
             print(".", end="", flush=True)
 
-            for num in range(0, data_num):
+            conn = sqlite3.connect("models.db")
+            c = conn.cursor()
 
-                model_type = data["data"]["data"][num]["modelType"]
-                if model_type == 1:
-                    num_of_checkpoint_models += 1
-                elif model_type == 5:
-                    num_of_lora_models += 1
-
-                # 提取数据
+            for num in range(data_num):
                 uuid = data["data"]["data"][num]["uuid"]
+                name = data["data"]["data"][num]["name"]
+                nickname = data["data"]["data"][num]["nickname"]
+                modelType = data["data"]["data"][num]["modelType"]
+                modelTypeName = data["data"]["data"][num]["modelTypeName"]
+                baseType = data["data"]["data"][num]["baseType"][0]
+                baseTypeName = convert_base_type_to_name(baseType)
+                c.execute(
+                    "INSERT OR IGNORE INTO model (uuid, name, author, type, type_name, base_type, base_type_name) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    (
+                        uuid,
+                        name,
+                        nickname,
+                        modelType,
+                        modelTypeName,
+                        baseType,
+                        baseTypeName,
+                    ),
+                )
 
-                # 将数据添加到总列表中
-                all_uuids.append(uuid)
+            conn.commit()
+            conn.close()
         else:
-            print(f"Error: {response.status_code}")
-            break
+            printc("red", f"在第{page}页http返回错误: {response.status_code}")
+            
+    except Exception as e:
+        printc("red", f"在第{page}页取到了无效数据: {e}")
+
+
+def count_models():
+    conn = sqlite3.connect("models.db")
+    c = conn.cursor()
+    # 执行查询以计算不同 uuid 的总数
+    c.execute("SELECT COUNT(DISTINCT uuid) FROM model")
+    total_unique_uuids = c.fetchone()[0]  # fetchone() 返回第一条记录的第一个字段
+    conn.close()
+    print(f"数据库中模型总数为：{total_unique_uuids}")
+
+
+def count_models_by_type():
+    conn = sqlite3.connect("models.db")
+    c = conn.cursor()
+    c.execute("SELECT type_name, COUNT(DISTINCT uuid) FROM model GROUP BY type")
+    results = c.fetchall()
+    conn.close()
+    for result in results:
+        print(f"{result[0]:<20}类型数量为{result[1]}")
+
+
+# 多线程获取所有页（每页50个）的uuid
+def get_all_uuids(total_number):
+    total_pages = total_number // 50 + 1
+    # total_pages = 2
+
+    print(f"分页获取需要{total_pages}页")
+    # print("正在插入模型数据到数据库")
+
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        futures = [
+            executor.submit(get_uuids_for_page, page)
+            for page in range(1, total_pages + 1)
+        ]
+        for future in as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                printc("red", f"多线程获取所有uuid时发生错误: {e}")
 
     print("")
-    print(
-        f"共有{len(all_uuids)}个模型，其中CHECKPOINT类型{num_of_checkpoint_models}个，LORA类型{num_of_lora_models}个"
-    )
-
-    # 返回所有提取的uuid
-    return all_uuids
+    count_models()
+    count_models_by_type()
 
 
-# 根据给定uuid获得模型的全部信息，以json格式返回
+# 根据给定uuid获得模型的全部信息
 def get_model_info_by_uuid(uuid):
     # print(f"正在处理uuid：{uuid}")
+    conn = sqlite3.connect(db_file)
+    c = conn.cursor()
 
-    data = {}
-    response = lib_request(model_query_url + uuid, data).json()
-    
-    # 间隔半秒再接着爬，要不然容易到连接限制
-    time.sleep(0.5)
+    try:
+        data = {}
+        response = lib_request(model_query_url + uuid, data).json()
+        time.sleep(0.5)
 
-    model_uuid = response["data"]["uuid"]
-    model_name = response["data"]["name"]
-    model_type = response["data"]["modelType"]
-    versions = response["data"]["versions"]
-    version_info_list = []
-    global num_of_not_downloadable
+        if response["data"] is None:
+            return
 
-    for version in versions:
-        if (
-            version["attachment"] is not None
-            and version["attachment"]["modelSource"] is not None
-        ):
-            version_file_url = version["attachment"]["modelSource"]
-            version_file_name = version["attachment"]["modelSourceName"]
-            version_cover_image = version["imageGroup"]["coverUrl"]
-            version_name = version["name"]
-            version_download_count = version["downloadCount"]
-            version_base_type = version["baseType"]
-            version_description = version["versionDesc"]
-            version_create_time = version["createTime"]
+        model_uuid = response["data"]["uuid"]
+        model_name = response["data"]["name"]
+        model_type = response["data"]["modelType"]
+        versions = response["data"]["versions"]
 
-            # 创建一个字典来存储当前版本的信息
-            version_info = {
-                "version_file_url": version_file_url,
-                "version_file_name": version_file_name,
-                "version_cover_image": version_cover_image,
-                "version_name": version_name,
-                "version_download_count": version_download_count,
-                "version_base_type": base_type_mapping.get(version_base_type, "Other"),
-                "version_description": version_description,
-                "version_create_time": version_create_time,
-            }
+        for version in versions:
+            if (
+                version["attachment"] is not None
+                and version["attachment"]["modelSource"] is not None
+            ):
+                # print(f"正在获取{model_uuid}")
 
-            # 将当前版本的字典添加到列表中
-            version_info_list.append(version_info)
+                version_file_url = version["attachment"]["modelSource"]
+                version_file_name = version["attachment"]["modelSourceName"]
+                version_cover_image = version["imageGroup"]["coverUrl"]
+                version_name = version["name"]
+                version_download_count = version["downloadCount"]
+                version_base_type = version["baseType"]
+                version_description = version["versionDesc"]
+                version_create_time = version["createTime"]
 
-        else:
-            print(f"这个不让下载：{model_uuid}，名称：{model_name}，版本：{version["name"]}")
-            num_of_not_downloadable += 1
-            # continue
+                # 将版本信息插入到数据库的 'version' 表中
+                c.execute(
+                    "INSERT INTO version (url, file_name, cover_image, name, download_count, base_type, description, create_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    (
+                        version_file_url,
+                        version_file_name,
+                        version_cover_image,
+                        version_name,
+                        version_download_count,
+                        version_base_type,
+                        version_description,
+                        version_create_time,
+                    ),
+                )
+                conn.commit()
+                
+                c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
+                conn.commit()
+                
 
-    # 只有当version_info_list不为空时，才创建model_info字典
-    if version_info_list:
-        model_info = {
-            "model_uuid": model_uuid,
-            "model_name": model_name,
-            "model_type": model_type_mapping.get(model_type, "Unknown"),
-            "versions": version_info_list,
-        }
-        json_result = json.dumps(model_info)
-    else:
-        json_result = None
+            else:
+                printc("gray", f"这个模型（版本）不让下载：{uuid}，名称：{model_name}，版本：{version['name']}")
+                # 将不让下载的模型的UUID插入到 'not_downloadable' 表中
+                c.execute(
+                    "INSERT INTO not_downloadable (uuid, model_name, version_name) VALUES (?, ?, ?)",
+                    (uuid, model_name, version["name"]),
+                )
+                conn.commit()
+                
+                c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
+                conn.commit()
 
-    return json_result
+    except Exception as e:
+        printc("red", f"在获取{uuid}时发生了错误：{type(e).__name__}")
+
+        c.execute("INSERT INTO failed (uuid) VALUES (?)", (uuid,))
+        conn.commit()
+
+    finally:
+        c.close()
+        conn.close()
 
 
-# 根据uuid列表获得所有模型的全部信息，以json格式返回
-def get_all_models_info(uuids):
-    all_models_info = []
+# 返回一个uuid列表
+def get_all_uuids_from_database(table):
+    conn = sqlite3.connect(db_file)
+    cursor = conn.cursor()
+    cursor.execute("SELECT uuid FROM " + table)
+    uuids = cursor.fetchall()
+    conn.close()
+    return [uuid[0] for uuid in uuids]
 
-    for uuid in uuids:
-        model = get_model_info_by_uuid(uuid)
-        if model is not None:
-            all_models_info.append({"model": json.loads(model)})
-        # time.sleep(0.1)
 
-    merged_json_data = {"models": all_models_info}
-    print(f"有{num_of_not_downloadable}个模型（或版本）不让下载")
+# 获取not_downloadable数据条数
+def count_not_downloadable_records():
+    conn = sqlite3.connect(db_file)
+    cursor = conn.cursor()
 
-    return merged_json_data
+    # 执行SQL查询来获取not_downloadable表中的记录数
+    cursor.execute("SELECT COUNT(*) FROM not_downloadable")
+    count = cursor.fetchone()[0]  # 获取查询结果的第一行第一列的值
+
+    conn.close()
+
+    return count
+
+
+def get_all_models_info(uuid_list):    
+    print(f"==========开始逐个获取uuid包含的模型信息==========")
+
+    # 使用ThreadPoolExecutor来管理线程
+    with ThreadPoolExecutor(max_workers=20) as executor:
+        # 提交任务到线程池，并将uuid作为参数传递
+        futures = {executor.submit(get_model_info_by_uuid, uuid): uuid for uuid in uuid_list}
+
+        # 等待所有任务完成
+        for future in as_completed(futures):
+            uuid = futures[future]
+            try:
+                future.result()
+            except Exception as e:
+                # printc("red", f"多线程获取{uuid}包含的模型信息时发生错误: {e}")
+                print("", end="", flush=True)
+
+
+def process_failed():
+    uuid_list = get_all_uuids_from_database("failed")
+    if len(uuid_list) > 0:
+        print(f"发现{len(uuid_list)}个获取失败的uuid，再来一遍")
+        get_all_models_info(uuid_list)
 
 
 # 主入口
-total_number = get_total_number(models=[], types=[], tagV2Id=model_category)
-uuids = get_all_uuids(total_number)
-all_models_info = get_all_models_info(uuids)
-file_name = "all_models_" + model_category + ".json"
-with open(file_name, "w", encoding="utf-8") as json_file:
-    json.dump(all_models_info, json_file, ensure_ascii=False, indent=4)
+create_db()
+get_tag_info()
+total_number = get_total_number(models=[], types=[], tagV2Id=model_tag)
+get_all_uuids(total_number)
+
+uuid_list = get_all_uuids_from_database("model")
+get_all_models_info(uuid_list)
+
+process_failed()
