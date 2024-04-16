@@ -419,19 +419,21 @@ def get_model_info_by_uuid(uuid):
                 
                 version_name = version["name"]
                 version_download_count = version["downloadCount"]
+                version_run_count = version["runCount"]
                 version_base_type = version["baseType"]
                 version_description = version["versionDesc"]
                 version_create_time = version["createTime"]
 
                 # 将版本信息插入到数据库的 'version' 表中
                 c.execute(
-                    "INSERT INTO version (url, file_name, cover_image, name, download_count, base_type, description, create_time, model_uuid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT INTO version (url, file_name, cover_image, name, download_count, run_count, base_type, description, create_time, model_uuid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                     (
                         version_file_url,
                         version_file_name,
                         version_cover_image,
                         version_name,
                         version_download_count,
+                        version_run_count,
                         version_base_type,
                         version_description,
                         version_create_time,
