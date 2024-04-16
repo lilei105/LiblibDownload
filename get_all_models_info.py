@@ -56,13 +56,6 @@ def printc(color, text):
     print(f"{EXTENDED_ANSI_COLORS[color]}{text}{EXTENDED_ANSI_COLORS['reset']}")
     
 
-# 创建数据表的函数
-def create_table(conn, table_name, columns):
-    column_definitions = ", ".join(f"{name} {data_type}" for name, data_type in columns)
-    create_table_sql = f"CREATE TABLE IF NOT EXISTS {table_name} ({column_definitions})"
-    conn.execute(create_table_sql)
-
-
 # 创建数据库文件，并调用创建表的函数来创建所有数据表
 def create_db():
     # 检查数据库文件是否存在
@@ -72,76 +65,95 @@ def create_db():
 
     # 连接到SQLite数据库
     conn = sqlite3.connect(db_file)
-    try:
-        # 执行创建表的操作
-        table_definitions = [
-            (
-                "info",
-                [
-                    ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
-                    ("count", "INTEGER"),
-                    ("last_run", "DATE"),
-                ],
-            ),
-            (
-                "tag",
-                [
-                    ("id", "INTEGER PRIMARY KEY"),
-                    # ("number", "INTEGER"),
-                    ("name", "TEXT"),
-                ],
-            ),
-            (
-                "model",
-                [
-                    ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
-                    ("uuid", "TEXT UNIQUE"),
-                    ("name", "TEXT"),
-                    ("extracted", "INTEGER"),
-                    ("author", "TEXT"),
-                    ("type", "TEXT"),
-                    ("type_name", "TEXT"),
-                    ("base_type", "TEXT"),
-                    ("base_type_name", "TEXT"),
-                    ("tags", "TEXT"),
-                ],
-            ),
-            (
-                "version",
-                [
-                    ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
-                    ("url", "TEXT"),
-                    ("file_name", "TEXT"),
-                    ("cover_image", "TEXT"),
-                    ("name", "TEXT"),
-                    ("download_count", "INTEGER"),
-                    ("run_count", "INTEGER"),
-                    ("base_type", "TEXT"),
-                    ("description", "TEXT"),
-                    ("create_time", "DATE"),
-                ],
-            ),
-            (
-                "not_downloadable",
-                [
-                    ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
-                    ("uuid", "TEXT"),
-                    ("model_name", "TEXT"),
-                    ("version_name", "TEXT"),
-                ],
-            ),
-            ("failed", [("id", "INTEGER PRIMARY KEY AUTOINCREMENT"), ("uuid", "TEXT UNIQUE")]),
-        ]
+    c = conn.cursor()
 
-        for table_name, columns in table_definitions:
-            create_table(conn, table_name, columns)
+    table_definitions = [
+        (
+            "info",
+            [
+                ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                ("count", "INTEGER"),
+                ("last_run", "DATE"),
+            ],
+            None  # 无外键
+        ),
+        (
+            "tag",
+            [
+                ("id", "INTEGER PRIMARY KEY"),
+                ("name", "TEXT"),
+            ],
+            None  # 无外键
+        ),
+        (
+            "model",
+            [
+                ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                ("uuid", "TEXT UNIQUE"),
+                ("name", "TEXT"),
+                ("extracted", "INTEGER"),
+                ("author", "TEXT"),
+                ("type", "TEXT"),
+                ("type_name", "TEXT"),
+                ("base_type", "TEXT"),
+                ("base_type_name", "TEXT"),
+                ("tags", "TEXT"),
+            ],
+            None  # 无外键
+        ),
+        (
+            "version",
+            [
+                ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                ("url", "TEXT"),
+                ("file_name", "TEXT"),
+                ("cover_image", "TEXT"),
+                ("name", "TEXT"),
+                ("download_count", "INTEGER"),
+                ("run_count", "INTEGER"),
+                ("base_type", "TEXT"),
+                ("description", "TEXT"),
+                ("create_time", "DATE"),
+                ("model_uuid", "TEXT"),
+            ],
+            "FOREIGN KEY(model_uuid) REFERENCES model(uuid)"  # 添加外键
+        ),
+        (
+            "not_downloadable",
+            [
+                ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                ("uuid", "TEXT"),
+                ("model_name", "TEXT"),
+                ("version_name", "TEXT"),
+            ],
+            None  # 无外键
+        ),
+        (
+            "failed",
+            [
+                ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
+                ("uuid", "TEXT UNIQUE"),
+            ],
+            None  # 无外键
+        ),
+    ]
+    
+    try:
+        for table_name, columns, foreign_key in table_definitions:
+            # 创建表的SQL语句
+            create_table_sql = f"CREATE TABLE {table_name} ("
+            create_table_sql += ", ".join([f"{column[0]} {column[1]}" for column in columns])
+            if foreign_key:
+                create_table_sql += f", {foreign_key}"
+            create_table_sql += ")"
+            # 执行SQL语句
+            c.execute(create_table_sql)
 
         # 提交事务
         conn.commit()
-
         print(f"已经创建数据库文件{db_file}")
-    except sqlite3.Error as e:
-        printc("red", f"创建数据库失败：{e}")
+    except Exception as e:
+        print(f"创建数据库失败：{e}")
     finally:
         # 关闭数据库连接
         conn.close()
@@ -270,6 +282,10 @@ def get_uuids_for_page(page):
         # 来了不多于50条uuid
         if response.status_code == 200:
             data = response.json()
+            if data["data"] is None or data["data"]["data"] is None:
+                printc("yellow", f"第{page}页没有数据")
+                return
+            
             data_num = len(data["data"]["data"])
             print(".", end="", flush=True)
 
@@ -362,7 +378,10 @@ def get_model_info_by_uuid(uuid):
     existing_uuid = c.fetchone()
     
     if existing_uuid:
-        # print(f"UUID {uuid} already exists in the database.")
+        printc("yellow", f"UUID {uuid} 已处理过.")
+        c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
+        conn.commit()
+        
         return
 
     try:
@@ -371,6 +390,7 @@ def get_model_info_by_uuid(uuid):
         time.sleep(0.5)
 
         if response["data"] is None:
+            printc("yellow", f"在获取{uuid}时发现了空数据，跳过这个uuid")
             return
 
         model_uuid = response["data"]["uuid"]
@@ -387,7 +407,9 @@ def get_model_info_by_uuid(uuid):
 
                 version_file_url = version["attachment"]["modelSource"]
                 version_file_name = version["attachment"]["modelSourceName"]
+                
                 version_cover_image = version["imageGroup"]["coverUrl"]
+                
                 version_name = version["name"]
                 version_download_count = version["downloadCount"]
                 version_base_type = version["baseType"]
@@ -396,7 +418,7 @@ def get_model_info_by_uuid(uuid):
 
                 # 将版本信息插入到数据库的 'version' 表中
                 c.execute(
-                    "INSERT INTO version (url, file_name, cover_image, name, download_count, base_type, description, create_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT INTO version (url, file_name, cover_image, name, download_count, base_type, description, create_time, model_uuid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                     (
                         version_file_url,
                         version_file_name,
@@ -406,6 +428,7 @@ def get_model_info_by_uuid(uuid):
                         version_base_type,
                         version_description,
                         version_create_time,
+                        uuid
                     ),
                 )
                 conn.commit()
