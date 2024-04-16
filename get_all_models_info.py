@@ -378,7 +378,7 @@ def get_model_info_by_uuid(uuid):
     existing_uuid = c.fetchone()
     
     if existing_uuid:
-        printc("yellow", f"UUID {uuid} 已处理过.")
+        # printc("yellow", f"UUID {uuid} 已处理过.")
         c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
         conn.commit()
         
@@ -405,10 +405,17 @@ def get_model_info_by_uuid(uuid):
             ):
                 # print(f"正在获取{model_uuid}")
 
+                if version["attachment"]["modelSource"] is None or version["attachment"]["modelSourceName"] is None:
+                    printc("yellow", "模型{}不包含文件信息")
+                    continue
+                
                 version_file_url = version["attachment"]["modelSource"]
                 version_file_name = version["attachment"]["modelSourceName"]
                 
-                version_cover_image = version["imageGroup"]["coverUrl"]
+                if version["imageGroup"] is None or version["imageGroup"]["coverUrl"] is None:
+                    version_cover_image = None
+                else:
+                    version_cover_image = version["imageGroup"]["coverUrl"]
                 
                 version_name = version["name"]
                 version_download_count = version["downloadCount"]
@@ -488,7 +495,7 @@ def get_all_models_info(uuid_list):
     print(f"==========开始逐个获取uuid包含的模型信息==========")
 
     # 使用ThreadPoolExecutor来管理线程
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:
         # 提交任务到线程池，并将uuid作为参数传递
         futures = {executor.submit(get_model_info_by_uuid, uuid): uuid for uuid in uuid_list}
 
@@ -511,12 +518,12 @@ def process_failed():
 
 
 # 主入口
-create_db()
-get_tag_info()
-total_number = get_total_number(models=[], types=[], tagV2Id=model_tag)
-get_all_uuids(total_number)
+# create_db()
+# get_tag_info()
+# total_number = get_total_number(models=[], types=[], tagV2Id=model_tag)
+# get_all_uuids(total_number)
 
-uuid_list = get_all_uuids_from_database("model")
-get_all_models_info(uuid_list)
+# uuid_list = get_all_uuids_from_database("model")
+# get_all_models_info(uuid_list)
 
 process_failed()
