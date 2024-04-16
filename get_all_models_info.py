@@ -495,7 +495,7 @@ def get_all_models_info(uuid_list):
     print(f"==========开始逐个获取uuid包含的模型信息==========")
 
     # 使用ThreadPoolExecutor来管理线程
-    with ThreadPoolExecutor(max_workers=1) as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         # 提交任务到线程池，并将uuid作为参数传递
         futures = {executor.submit(get_model_info_by_uuid, uuid): uuid for uuid in uuid_list}
 
@@ -518,12 +518,12 @@ def process_failed():
 
 
 # 主入口
-# create_db()
-# get_tag_info()
-# total_number = get_total_number(models=[], types=[], tagV2Id=model_tag)
-# get_all_uuids(total_number)
+create_db()
+get_tag_info()
+total_number = get_total_number(models=[], types=[], tagV2Id=model_tag)
+get_all_uuids(total_number)
 
-# uuid_list = get_all_uuids_from_database("model")
-# get_all_models_info(uuid_list)
+uuid_list = get_all_uuids_from_database("model")
+get_all_models_info(uuid_list)
 
 process_failed()
