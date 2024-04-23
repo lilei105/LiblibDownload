@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 
 # 100033表示建筑类
 # 其它可选的值参见“查询用的参数见这里.json”
-model_tag = 100085
+model_tag = None
 
 base_url = "https://liblib-api.vibrou.com/api/www/model/search"
 model_query_url = "https://liblib-api.vibrou.com/api/www/model/getByUuid/"
@@ -276,7 +276,7 @@ def get_all_tags_from_tagsV2(uuid, tagsV2):
             tag_ids.append(tag_id)
             
     except Exception as e:
-        print(f"获取{uuid}的tagsV2时发生错误：{e}")
+        print(f"获取{uuid}的tagsV2时发生错误：{type(e).__name__}")
     finally:
         return json.dumps(tag_ids)
 
@@ -316,9 +316,9 @@ def get_uuids_for_page(page):
                 modelTypeName = data["data"]["data"][num]["modelTypeName"]
                 baseType = data["data"]["data"][num]["baseType"][0]
                 baseTypeName = convert_base_type_to_name(baseType)
-                tags = get_all_tags_from_tagsV2(uuid, data["data"]["data"][num]["tagsV2"])
+                # tags = get_all_tags_from_tagsV2(uuid, data["data"]["data"][num]["tagsV2"])
                 c.execute(
-                    "INSERT OR IGNORE INTO model (uuid, name, author, extracted, type, type_name, base_type, base_type_name, tags) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT OR IGNORE INTO model (uuid, name, author, extracted, type, type_name, base_type, base_type_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                     (
                         uuid,
                         name,
@@ -328,7 +328,7 @@ def get_uuids_for_page(page):
                         modelTypeName,
                         baseType,
                         baseTypeName,
-                        tags,
+                        # tags,
                     ),
                 )
 
@@ -415,6 +415,7 @@ def get_model_info_by_uuid(uuid):
         model_name = response["data"]["name"]
         model_type = response["data"]["modelType"]
         versions = response["data"]["versions"]
+        tagsV2 = response["data"]["tagsV2"]
 
         for version in versions:
             if (
@@ -471,6 +472,13 @@ def get_model_info_by_uuid(uuid):
                 
             c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
             conn.commit()
+            
+            
+            tags = get_all_tags_from_tagsV2(uuid, tagsV2)
+            c.execute("UPDATE model SET tags = ? WHERE uuid = ?", (tags, uuid,))
+            conn.commit()
+            
+            
                 
             # 在插入操作之后，更新 'model' 表中对应的 'extracted' 字段为1
             c.execute("UPDATE model SET extracted = 1 WHERE uuid = ?", (uuid,))
