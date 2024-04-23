@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 
 # 100033表示建筑类
 # 其它可选的值参见“查询用的参数见这里.json”
-model_tag = None
+model_tag = 100085
 
 base_url = "https://liblib-api.vibrou.com/api/www/model/search"
 model_query_url = "https://liblib-api.vibrou.com/api/www/model/getByUuid/"
@@ -264,6 +264,22 @@ def convert_base_type_to_name(number):
     }
     return base_type_to_name.get(number, "Unknown")
 
+def get_all_tags_from_tagsV2(uuid, tagsV2):
+    # 初始化一个空列表来存储所有的tag_id
+    tag_ids = []
+    try:
+        # 遍历tags数组
+        for tag in tagsV2["modelContent"]:
+            # 提取每个tag的id
+            tag_id = tag["id"]
+            # 将tag_id添加到tag_ids列表中
+            tag_ids.append(tag_id)
+            
+    except Exception as e:
+        print(f"获取{uuid}的tagsV2时发生错误：{e}")
+    finally:
+        return json.dumps(tag_ids)
+
 
 # 获得每一页的50个uuid
 def get_uuids_for_page(page):
@@ -300,8 +316,9 @@ def get_uuids_for_page(page):
                 modelTypeName = data["data"]["data"][num]["modelTypeName"]
                 baseType = data["data"]["data"][num]["baseType"][0]
                 baseTypeName = convert_base_type_to_name(baseType)
+                tags = get_all_tags_from_tagsV2(uuid, data["data"]["data"][num]["tagsV2"])
                 c.execute(
-                    "INSERT OR IGNORE INTO model (uuid, name, author, extracted, type, type_name, base_type, base_type_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT OR IGNORE INTO model (uuid, name, author, extracted, type, type_name, base_type, base_type_name, tags) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                     (
                         uuid,
                         name,
@@ -311,6 +328,7 @@ def get_uuids_for_page(page):
                         modelTypeName,
                         baseType,
                         baseTypeName,
+                        tags,
                     ),
                 )
 
