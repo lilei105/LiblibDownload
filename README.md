@@ -34,3 +34,4 @@ https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win
 
 # 备注
 
+get_all_models_info.py已更新自动上传机制，你不用自己运行，它会每天在某个遥远的服务器上自动运行，自动更新数据库，自动上传到github里，代码库里的models.db就是最新的数据库文件，从commit comment里能看出更新日期。
