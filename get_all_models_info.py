@@ -1,4 +1,4 @@
-import time, requests, json, os, sqlite3
+import time, requests, json, os, sqlite3, shutil
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
@@ -545,6 +545,17 @@ def process_failed():
         get_all_models_info(uuid_list)
 
 
+
+def copy_and_publish_db_file():
+    # 获取当前文件的完整路径
+    current_file_path = os.path.abspath(__file__)
+    
+    # 获取当前文件所在的目录
+    current_dir = os.path.dirname(current_file_path)
+    
+    shutil.copy(db_file, current_dir)
+    
+
 # 主入口
 create_db()
 get_tag_info()
@@ -555,3 +566,5 @@ uuid_list = get_all_uuids_from_database("model")
 get_all_models_info(uuid_list)
 
 process_failed()
+
+copy_and_publish_db_file()
