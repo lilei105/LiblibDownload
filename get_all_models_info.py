@@ -1,4 +1,4 @@
-import time, requests, json, os, sqlite3, shutil
+import time, requests, json, os, sqlite3, shutil, subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
@@ -54,7 +54,7 @@ def printc(color, text):
     """
     # 打印彩色文本
     print(f"{EXTENDED_ANSI_COLORS[color]}{text}{EXTENDED_ANSI_COLORS['reset']}")
-    
+
 
 # 创建数据库文件，并调用创建表的函数来创建所有数据表
 def create_db():
@@ -75,7 +75,7 @@ def create_db():
                 ("count", "INTEGER"),
                 ("last_run", "DATE"),
             ],
-            None  # 无外键
+            None,  # 无外键
         ),
         (
             "tag",
@@ -83,7 +83,7 @@ def create_db():
                 ("id", "INTEGER PRIMARY KEY"),
                 ("name", "TEXT"),
             ],
-            None  # 无外键
+            None,  # 无外键
         ),
         (
             "model",
@@ -99,7 +99,7 @@ def create_db():
                 ("base_type_name", "TEXT"),
                 ("tags", "TEXT"),
             ],
-            None  # 无外键
+            None,  # 无外键
         ),
         (
             "version",
@@ -116,7 +116,7 @@ def create_db():
                 ("create_time", "DATE"),
                 ("model_uuid", "TEXT"),
             ],
-            "FOREIGN KEY(model_uuid) REFERENCES model(uuid)"  # 添加外键
+            "FOREIGN KEY(model_uuid) REFERENCES model(uuid)",  # 添加外键
         ),
         (
             "not_downloadable",
@@ -126,7 +126,7 @@ def create_db():
                 ("model_name", "TEXT"),
                 ("version_name", "TEXT"),
             ],
-            None  # 无外键
+            None,  # 无外键
         ),
         (
             "failed",
@@ -134,15 +134,17 @@ def create_db():
                 ("id", "INTEGER PRIMARY KEY AUTOINCREMENT"),
                 ("uuid", "TEXT UNIQUE"),
             ],
-            None  # 无外键
+            None,  # 无外键
         ),
     ]
-    
+
     try:
         for table_name, columns, foreign_key in table_definitions:
             # 创建表的SQL语句
             create_table_sql = f"CREATE TABLE {table_name} ("
-            create_table_sql += ", ".join([f"{column[0]} {column[1]}" for column in columns])
+            create_table_sql += ", ".join(
+                [f"{column[0]} {column[1]}" for column in columns]
+            )
             if foreign_key:
                 create_table_sql += f", {foreign_key}"
             create_table_sql += ")"
@@ -201,9 +203,9 @@ def get_total_number(models, types, tagV2Id):
         if response.status_code == 200:
             json_data = response.json()
             total_number = json_data["data"]["total"]
-            
+
             current_utc_time = datetime.now(timezone.utc)
-            formatted_time = current_utc_time.strftime('%Y-%m-%dT%H:%M:%S.000+00:00')
+            formatted_time = current_utc_time.strftime("%Y-%m-%dT%H:%M:%S.000+00:00")
             # current_date = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + '+00:00'
             cursor.execute(
                 "INSERT INTO info (count, last_run) VALUES (?, ?)",
@@ -213,7 +215,10 @@ def get_total_number(models, types, tagV2Id):
             print(f"tag为“{tagV2Id}”的模型数据共有{total_number}条")
 
         else:
-            printc("red", f"获取模型数量时http返回数据出错，http错误代码{response.status_code}")
+            printc(
+                "red",
+                f"获取模型数量时http返回数据出错，http错误代码{response.status_code}",
+            )
     except Exception as e:
         printc("red", f"获取模型数量时发生错误: {e}")
     finally:
@@ -264,6 +269,7 @@ def convert_base_type_to_name(number):
     }
     return base_type_to_name.get(number, "Unknown")
 
+
 def get_all_tags_from_tagsV2(uuid, tagsV2):
     # 初始化一个空列表来存储所有的tag_id
     tag_ids = []
@@ -274,7 +280,7 @@ def get_all_tags_from_tagsV2(uuid, tagsV2):
             tag_id = tag["id"]
             # 将tag_id添加到tag_ids列表中
             tag_ids.append(tag_id)
-            
+
     except Exception as e:
         printc("gray", f"获取{uuid}的tagsV2时发生错误：{type(e).__name__}")
     finally:
@@ -301,7 +307,7 @@ def get_uuids_for_page(page):
             if data["data"] is None or data["data"]["data"] is None:
                 printc("yellow", f"第{page}页没有数据")
                 return
-            
+
             data_num = len(data["data"]["data"])
             print(".", end="", flush=True)
 
@@ -336,7 +342,7 @@ def get_uuids_for_page(page):
             conn.close()
         else:
             printc("red", f"在第{page}页http返回错误: {response.status_code}")
-            
+
     except Exception as e:
         printc("red", f"在第{page}页取到了无效数据: {e}")
 
@@ -367,7 +373,7 @@ def get_all_uuids(total_number):
     # total_pages = 2
 
     print(f"分页获取需要{total_pages}页")
-    
+
     # 分页获取时不能多线程，否则在较多页数之后会获取到空数据
     with ThreadPoolExecutor(max_workers=1) as executor:
         futures = [
@@ -390,16 +396,16 @@ def get_model_info_by_uuid(uuid):
     # print(f"正在处理uuid：{uuid}")
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
-    
+
     # 检查UUID是否已存在于数据库的'model'表中
     c.execute("SELECT uuid FROM model WHERE uuid = ? AND extracted = 1", (uuid,))
     existing_uuid = c.fetchone()
-    
+
     if existing_uuid:
         # printc("yellow", f"UUID {uuid} 已处理过.")
         c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
         conn.commit()
-        
+
         return
 
     try:
@@ -424,18 +430,24 @@ def get_model_info_by_uuid(uuid):
             ):
                 # print(f"正在获取{model_uuid}")
 
-                if version["attachment"]["modelSource"] is None or version["attachment"]["modelSourceName"] is None:
+                if (
+                    version["attachment"]["modelSource"] is None
+                    or version["attachment"]["modelSourceName"] is None
+                ):
                     printc("yellow", "模型{}不包含文件信息")
                     continue
-                
+
                 version_file_url = version["attachment"]["modelSource"]
                 version_file_name = version["attachment"]["modelSourceName"]
-                
-                if version["imageGroup"] is None or version["imageGroup"]["coverUrl"] is None:
+
+                if (
+                    version["imageGroup"] is None
+                    or version["imageGroup"]["coverUrl"] is None
+                ):
                     version_cover_image = None
                 else:
                     version_cover_image = version["imageGroup"]["coverUrl"]
-                
+
                 version_name = version["name"]
                 version_download_count = version["downloadCount"]
                 version_run_count = version["runCount"]
@@ -456,30 +468,36 @@ def get_model_info_by_uuid(uuid):
                         version_base_type,
                         version_description,
                         version_create_time,
-                        uuid
+                        uuid,
                     ),
                 )
                 conn.commit()
-                
+
             else:
-                printc("gray", f"这个模型（版本）不让下载：{uuid}，名称：{model_name}，版本：{version['name']}")
+                printc(
+                    "gray",
+                    f"这个模型（版本）不让下载：{uuid}，名称：{model_name}，版本：{version['name']}",
+                )
                 # 将不让下载的模型的UUID插入到 'not_downloadable' 表中
                 c.execute(
                     "INSERT INTO not_downloadable (uuid, model_name, version_name) VALUES (?, ?, ?)",
                     (uuid, model_name, version["name"]),
                 )
                 conn.commit()
-                
+
             c.execute("DELETE FROM failed WHERE uuid = ?", (uuid,))
             conn.commit()
-            
-            
+
             tags = get_all_tags_from_tagsV2(uuid, tagsV2)
-            c.execute("UPDATE model SET tags = ? WHERE uuid = ?", (tags, uuid,))
+            c.execute(
+                "UPDATE model SET tags = ? WHERE uuid = ?",
+                (
+                    tags,
+                    uuid,
+                ),
+            )
             conn.commit()
-            
-            
-                
+
             # 在插入操作之后，更新 'model' 表中对应的 'extracted' 字段为1
             c.execute("UPDATE model SET extracted = 1 WHERE uuid = ?", (uuid,))
             conn.commit()
@@ -519,13 +537,15 @@ def count_not_downloadable_records():
     return count
 
 
-def get_all_models_info(uuid_list):    
+def get_all_models_info(uuid_list):
     print(f"==========开始逐个获取uuid包含的模型信息==========")
 
     # 使用ThreadPoolExecutor来管理线程
     with ThreadPoolExecutor(max_workers=5) as executor:
         # 提交任务到线程池，并将uuid作为参数传递
-        futures = {executor.submit(get_model_info_by_uuid, uuid): uuid for uuid in uuid_list}
+        futures = {
+            executor.submit(get_model_info_by_uuid, uuid): uuid for uuid in uuid_list
+        }
 
         # 等待所有任务完成
         for future in as_completed(futures):
@@ -545,16 +565,34 @@ def process_failed():
         get_all_models_info(uuid_list)
 
 
+def run_command(command):
+    result = subprocess.run(command, shell=True, text=True, capture_output=True)
+    if result.returncode != 0:
+        print(f"Error: {result.stderr}")
+    else:
+        print(f"Output: {result.stdout}")
+
 
 def copy_and_publish_db_file():
+    root_dir = "/root/"
+
     # 获取当前文件的完整路径
     current_file_path = os.path.abspath(__file__)
-    
     # 获取当前文件所在的目录
     current_dir = os.path.dirname(current_file_path)
-    
-    shutil.copy(db_file, current_dir)
-    
+    dest_path = current_dir + "/" + db_file
+
+    shutil.copy(root_dir + db_file, current_dir)
+
+    date = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+
+    # run_command("git lfs install")
+    # run_command('git lfs track "*.db"')
+    # run_command("git add .gitattributes")
+    run_command(f"git add {dest_path}")
+    run_command(f'git commit -m "自动上传models.db {date}"')
+    run_command(f"git push origin master")
+
 
 # 主入口
 create_db()
