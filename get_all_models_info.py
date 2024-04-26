@@ -276,7 +276,7 @@ def get_all_tags_from_tagsV2(uuid, tagsV2):
             tag_ids.append(tag_id)
             
     except Exception as e:
-        print(f"获取{uuid}的tagsV2时发生错误：{type(e).__name__}")
+        printc("gray", f"获取{uuid}的tagsV2时发生错误：{type(e).__name__}")
     finally:
         return json.dumps(tag_ids)
 
