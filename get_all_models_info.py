@@ -583,6 +583,8 @@ def copy_and_publish_db_file():
     dest_path = current_dir + "/" + db_file
 
     shutil.copy(root_dir + db_file, current_dir)
+    print(f"当前目录：{current_dir}")
+    os.chdir(current_dir)
 
     date = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
