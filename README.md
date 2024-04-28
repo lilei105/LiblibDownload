@@ -29,6 +29,7 @@ https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win
 1. 没有python的话先安装python
 2. 从右侧Releases链接下载最新的download.py和models.db，存到任意文件夹里里并打开文件夹。aria2c.exe也放到同一个文件夹里。
 3. 双击或从命令行运行download.py即可，从图形化界面上挑选要下载的模型，点击下载
+![截图](screenshot.png)
 4. 坐和放宽
 
 
