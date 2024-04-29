@@ -27,10 +27,10 @@ https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win
 # 用法
 
 1. 没有python的话先安装python
-2. 从右侧Releases链接下载最新的download.py和models.db，存到任意文件夹里里并打开文件夹。aria2c.exe也放到同一个文件夹里。
-3. 双击或从命令行运行download.py即可，从图形化界面上挑选要下载的模型，点击下载
+2. 下载最新的download.py和models.db，直接从上面点击每个文件下载也行，从右边的Releases里下载也行，一样的，存到任意文件夹里里并打开文件夹。aria2c.exe也放到同一个文件夹里。
+3. 双击或从命令行运行download.py即可，从图形化界面上过滤要下载的模型，点击下载。注意下载就是下载全部模型啊，下方绿字如果显示“共获得1000个模型的2000个版本”，那就是真下载全部2000个版本。
 ![截图](screenshot.png)
-4. 坐和放宽
+4. Sit back and relax.
 
 
 # 备注
