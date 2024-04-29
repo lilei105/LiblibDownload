@@ -39,4 +39,4 @@ get_all_models_info.py已更新自动上传机制，你不用自己运行，它�
 
 ### 群友反应MacOS不能下载，试了下确实如此，大约是异步调用的机制问题，但我没有Mac来调试，所以就是暂不支持了。Windows是没有问题。
 
-### 如果你是打包下载了整个代码，你会发现里面的models.db大小不对，这是因为这个文件比较大，github存储它的方式不一样，默认不会打包到代码里。没事，单独点击这个文件（https://github.com/lilei105/LiblibDownload/blob/master/models.db）下载一下就好了，它现在是90多MB的样子。
+### 如果你是打包下载了整个代码，你会发现里面的models.db大小不对，这是因为这个文件比较大，github存储它的方式不一样，默认不会打包到代码里。没事，单独点击[这个数据文件](https://github.com/lilei105/LiblibDownload/blob/master/models.db) 下载一下就好了，它现在是90多MB的样子。
