@@ -164,6 +164,10 @@ async def download_other_files(
 ):
     # 保存该版本的说明信息
     description_file = os.path.join(os.path.dirname(cover_image_file_path), "readme.htm")
+    directory = os.path.dirname(description_file)
+    if directory and not os.path.exists(directory):
+        os.makedirs(directory)
+        
     with open(description_file, "w", encoding="utf-8") as desc_file:
         desc_file.write(version_desc + "\n")
 
@@ -208,6 +212,10 @@ async def download_model_file(root, url, file_path, total_files):
         global_progress_var.set(global_num_of_files_to_download / total_files * 100)
         return
 
+    directory = os.path.dirname(file_path)
+    if directory and not os.path.exists(directory):
+        os.makedirs(directory)
+        
     # 构造aria2c命令
     command = [
         "aria2c",
@@ -275,10 +283,10 @@ async def download(root):
             version_cover_image = result[6]
             version_desc = result[7]
 
-            model_name = re.sub(r'[\\/*?:"<>|丨]', "_", model_name)
+            model_name = re.sub(r'[\\/*?:"<>|丨·]', "_", model_name)
             model_name = model_name.replace(" ", "")
 
-            version_name = re.sub(r'[\\/*?:"<>|丨]', "_", version_name)
+            version_name = re.sub(r'[\\/*?:"<>|丨·]', "_", version_name)
             version_name = version_name.replace(" ", "")
 
             version_file_name = os.path.basename(version_file_name)
