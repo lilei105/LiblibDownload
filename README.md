@@ -21,14 +21,14 @@
 
 一个开源的下载程序，download.py会调用它下载那些巨大的文件，要放到跟download.py同一个目录里。
 有条件的最好自己去github下载这个软件并解压放到同一个目录里，地址：
-https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win-32bit-build1.zip
+https://github.com/aria2/aria2/releases/
 
 
 # 用法
 
 1. 没有python的话先安装python
-2. 下载最新的download.py和models.db，直接从上面点击每个文件下载也行，从右边的Releases里下载也行，一样的，存到任意文件夹里里并打开文件夹。aria2c.exe也放到同一个文件夹里。
-3. 双击或从命令行运行download.py即可，从图形化界面上过滤要下载的模型，点击下载。注意下载就是下载全部模型啊，下方绿字如果显示“共获得1000个模型的2000个版本”，那就是真下载全部2000个版本。
+2. 下载download.py、models.db、aria2c.exe三个文件，放到同一个文件夹里。
+3. 从命令行运行python download.py即可.
 ![截图](screenshot.png)
 4. Sit back and relax.
 
@@ -37,6 +37,8 @@ https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win
 
 get_all_models_info.py已更新自动上传机制，你不用自己运行，它会每天在某个遥远的服务器上自动运行，自动更新数据库，自动上传到github里，代码库里的models.db就是最新的数据库文件，从commit comment里能看出更新日期。
 
-### 群友反应MacOS不能下载，试了下确实如此，大约是异步调用的机制问题，但我没有Mac来调试，所以就是暂不支持了。Windows是没有问题。
+新增文本搜索，Contain text文本框输入的字，会按模型名字或作者名字一起搜索。
+
+群友反应MacOS不能下载，试了下确实如此，大约是异步调用的机制问题，但我没有Mac来调试，所以就是暂不支持了。Windows是没有问题。
 
 ### 如果你是打包下载了整个代码，你会发现里面的models.db大小不对，这是因为这个文件比较大，github存储它的方式不一样，默认不会打包到代码里。没事，单独点击[这个数据文件](https://github.com/lilei105/LiblibDownload/blob/master/models.db) 下载一下就好了，它现在是90多MB的样子。
