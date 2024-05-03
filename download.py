@@ -65,6 +65,7 @@ def query_data_task(combobox_vars, root, page=1, page_size=100):
     category = values["Catetory:"]
     older_than = int(values["Older than (days):"])
     num_of_downloads = int(values["Num of downloads:"])
+    contain_text = values["Contain text:"]
 
     # 连接数据库并查询
     conn = sqlite3.connect(db_file)
@@ -88,6 +89,11 @@ def query_data_task(combobox_vars, root, page=1, page_size=100):
         else:
             selected_tag = get_tag_id_from_name(category)
             params.append(f"%{selected_tag}%")
+            
+    if contain_text != "":
+        conditions.append("model.name LIKE ? OR model.author LIKE ?")
+        params.append(f"%{contain_text}%")
+        params.append(f"%{contain_text}%")
 
     conditions.append("version.download_count >= ?")
     params.append(num_of_downloads)
@@ -127,7 +133,7 @@ def query_data_task(combobox_vars, root, page=1, page_size=100):
     #     )
     # else:
     label_msg.config(
-        text=f"共有{len(model_uuids)}个模型的{len(files_to_download)}个版本，每页显示{page_size}条。"
+        text=f"共有{len(model_uuids)}个模型的{len(files_to_download)}个版本，每页最多{page_size}条。"
     )
 
     total_pages = int(len(model_uuids) / page_size + 1)
@@ -452,6 +458,7 @@ def create_ui():
         ("Base Type:", get_unique_values("model", "base_type_name"), True),
         ("Num of downloads:", [0, 50, 100, 500, 1000, 5000, 10000], False),
         ("Catetory:", get_unique_values("tag", "name"), True),
+        ("Contain text:", "", False)
     ]
 
     combobox_vars = {}
@@ -466,13 +473,24 @@ def create_ui():
         label = tk.Label(frame_top, text=label_text)
         label.grid(row=row, column=col, padx=5, pady=5, sticky="e")
 
-        var = tk.StringVar(root)
-        # 创建并放置Combobox
-        combobox = ttk.Combobox(frame_top, textvariable=var, values=combo_options)
-        combobox["state"] = "readonly" if is_readonly else "normal"
-        combobox.current(0)
-        combobox.grid(row=row, column=col + 1, padx=5, pady=5, sticky="w")
-        combobox_vars[label_text] = var
+        if combo_options:
+            var = tk.StringVar(root)
+            # 创建并放置Combobox
+            combobox = ttk.Combobox(frame_top, textvariable=var, values=combo_options)
+            combobox["state"] = "readonly" if is_readonly else "normal"
+            combobox.current(0)
+            combobox.grid(row=row, column=col + 1, padx=5, pady=5, sticky="w")
+            combobox_vars[label_text] = var
+            
+        else:
+            # 创建并放置Entry（文本框）
+            var = tk.StringVar(root)
+            entry = ttk.Entry(frame_top, textvariable=var)
+            entry["state"] = "readonly" if is_readonly else "normal"
+            entry.grid(row=row, column=col + 1, padx=5, pady=5, sticky="w")
+            # 这里可以添加事件处理函数，例如回车键事件
+            # entry.bind("<Return>", on_custom_text_entered)
+            combobox_vars[label_text] = var
 
         # 让combobox在水平方向上填充和扩展
         frame_top.grid_columnconfigure(col + 1, weight=1)
