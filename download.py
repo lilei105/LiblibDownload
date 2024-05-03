@@ -13,6 +13,10 @@ files_to_download = {}
 global_progress_var = None
 global_num_of_files_to_download = 0
 
+# 添加当前页码变量
+# current_page = None
+# max_page = None
+
 
 def get_tag_id_from_name(tag_name):
     conn = sqlite3.connect(db_file)
@@ -38,15 +42,23 @@ def get_unique_values(table_name, column_name):
     return values
 
 
-def query_data_task(combobox_vars, tree, label_msg):
+def query_data_task(combobox_vars, root, page=1, page_size=100):
+    tree = root.nametowidget(".middle.tree_frame.tree")
+    label_msg = root.nametowidget(".bottom.label_msg")
+    button2 = root.nametowidget(".middle.button_frame.download_button")
+    # button_prev = root.nametowidget(".middle.tree_frame.page_button_frame.prev")
+    # button_next = root.nametowidget(".middle.tree_frame.page_button_frame.next")
+    label_paging = root.nametowidget(".middle.tree_frame.paging_frame.label_paging")
+    combo_paging = root.nametowidget(".middle.tree_frame.paging_frame.combo_paging")
+
     # 清空Treeview中的所有数据
     for i in tree.get_children():
         tree.delete(i)
 
     values = {}
-    for lable, var in combobox_vars.items():
-        values[lable] = var.get()
-        print(f"{lable}: {var.get()}")
+    for label, var in combobox_vars.items():
+        values[label] = var.get()
+        print(f"{label} {var.get()}")
 
     model_type = values["Model Type:"]
     base_type = values["Base Type:"]
@@ -103,32 +115,101 @@ def query_data_task(combobox_vars, tree, label_msg):
     global files_to_download
     files_to_download = version_ids
 
-    if len(model_uuids) >= 100:
-        label_msg.config(
-            text=f"共获得{len(model_uuids)}个模型的{len(files_to_download)}个版本，只显示前100条。"
-        )
-    else:
-        label_msg.config(
-            text=f"共获得{len(model_uuids)}个模型的{len(files_to_download)}个版本。"
-        )
+    # global max_page
+    # max_page = tk.IntVar()
+    # max_page.set(len(model_uuids) / page_size + 1)
 
-    uuids_100 = model_uuids[:100]
+    button2.config(text=f"下载全部版本")
+
+    # if len(model_uuids) >= 100:
+    #     label_msg.config(
+    #         text=f"共有{len(model_uuids)}个模型的{len(files_to_download)}个版本，只显示前{page_size}条。"
+    #     )
+    # else:
+    label_msg.config(
+        text=f"共有{len(model_uuids)}个模型的{len(files_to_download)}个版本，每页显示{page_size}条。"
+    )
+
+    total_pages = int(len(model_uuids) / page_size + 1)
+    print(f"共有{total_pages}页")
+    label_paging.config(text=f"共有{total_pages}页，选择页数：")
+
+    pages = [page1 for page1 in range(1, total_pages + 1)]
+    combo_paging["values"] = pages
+
+    combo_paging.set(page)
+    
+    
+    combo_paging.bind("<<ComboboxSelected>>", lambda event: on_page_selected(combobox_vars, root))
+
+    # 计算偏移量
+    offset = (page - 1) * page_size
+
+    # uuids_100 = model_uuids[:100]
+    uuids_current_page = model_uuids[offset : offset + page_size]
 
     # 查询model表中的name, type_name, base_type_name
-    for uuid in uuids_100:
+    for uuid in uuids_current_page:
         cursor.execute(
-            f"SELECT name, author, type_name, base_type_name FROM model WHERE uuid = ?",
+            f"SELECT name, author, type_name, base_type_name, uuid FROM model WHERE uuid = ?",
             (uuid,),
         )
         result = cursor.fetchone()
         if result:
-            tree.insert("", tk.END, values=(result[0], result[1], result[2], result[3]))
+            tree.insert(
+                "",
+                tk.END,
+                text=result[4],
+                values=(result[0], result[1], result[2], result[3]),
+            )
+
+        tree.bind("<<TreeviewSelect>>", lambda e: on_tree_select(root, e))
 
     # 关闭数据库连接
     conn.close()
 
 
-def query_data(combobox_vars, root):
+def on_page_selected(combobox_vars, root):
+    combo_paging = root.nametowidget(".middle.tree_frame.paging_frame.combo_paging")
+    selected_page = combo_paging.get()
+    print(f"选择了第{selected_page}页")
+    query_data(combobox_vars, root, int(selected_page))
+    
+    
+
+def on_tree_select(root, event):
+    button2 = root.nametowidget(".middle.button_frame.download_button")
+    label_msg = root.nametowidget(".bottom.label_msg")
+
+    selected_items = event.widget.selection()  # 获取当前选中的行ID
+    selected_uuids = []
+    for item_id in selected_items:
+        item_data = event.widget.item(item_id)  # 获取选中行的数据
+        uuid = item_data["text"]  # 获取标签（tag）中的uuid
+        selected_uuids.append(uuid)
+        print(f"选中的行数据: {item_data['values']}, UUID: {uuid}")
+
+    conn = sqlite3.connect(db_file)
+    cursor = conn.cursor()
+    query = """
+        SELECT DISTINCT version.id 
+        FROM version 
+        WHERE model_uuid IN ({})
+        """.format(
+        ",".join(["?"] * len(selected_uuids))
+    )
+    cursor.execute(query, selected_uuids)
+    results = cursor.fetchall()
+
+    global files_to_download
+    files_to_download = [result[0] for result in results]
+    label_msg.config(
+        text=f"当前选中{len(selected_items)}个模型的{len(files_to_download)}个版本。"
+    )
+    button2.config(text=f"下载所有选中的")
+
+
+def query_data(combobox_vars, root, page=1):
     button2 = root.nametowidget(".middle.button_frame.download_button")
     button2.config(state=tk.NORMAL)
 
@@ -138,11 +219,7 @@ def query_data(combobox_vars, root):
     tree = root.nametowidget(".middle.tree_frame.tree")
     threading.Thread(
         target=query_data_task,
-        args=(
-            combobox_vars,
-            tree,
-            label_msg,
-        ),
+        args=(combobox_vars, root, page),
     ).start()
 
 
@@ -163,7 +240,13 @@ async def download_other_files(
     version_cover_image, cover_image_file_path, version_desc
 ):
     # 保存该版本的说明信息
-    description_file = os.path.join(os.path.dirname(cover_image_file_path), "readme.htm")
+    description_file = os.path.join(
+        os.path.dirname(cover_image_file_path), "readme.htm"
+    )
+    directory = os.path.dirname(description_file)
+    if directory and not os.path.exists(directory):
+        os.makedirs(directory)
+
     with open(description_file, "w", encoding="utf-8") as desc_file:
         desc_file.write(version_desc + "\n")
 
@@ -194,6 +277,8 @@ async def download_other_files(
 
 async def download_model_file(root, url, file_path, total_files):
     global global_progress_var
+
+    # 此时global_num_of_files_to_download应等于0
     global global_num_of_files_to_download
 
     label_msg = root.nametowidget(".bottom.label_msg")
@@ -203,10 +288,14 @@ async def download_model_file(root, url, file_path, total_files):
 
         global_num_of_files_to_download += 1
         label_msg.config(
-            text=f"正在下载第{global_num_of_files_to_download}/{total_files}个文件"
+            text=f"第{global_num_of_files_to_download}/{total_files}个文件下载已完成"
         )
         global_progress_var.set(global_num_of_files_to_download / total_files * 100)
         return
+
+    directory = os.path.dirname(file_path)
+    if directory and not os.path.exists(directory):
+        os.makedirs(directory)
 
     # 构造aria2c命令
     command = [
@@ -233,7 +322,7 @@ async def download_model_file(root, url, file_path, total_files):
         # 更新进度条
         global_num_of_files_to_download += 1
         label_msg.config(
-            text=f"正在下载第{global_num_of_files_to_download}/{total_files}个文件"
+            text=f"第{global_num_of_files_to_download}/{total_files}个文件下载已完成"
         )
         global_progress_var.set(global_num_of_files_to_download / total_files * 100)
     else:
@@ -275,10 +364,10 @@ async def download(root):
             version_cover_image = result[6]
             version_desc = result[7]
 
-            model_name = re.sub(r'[\\/*?:"<>|丨]', "_", model_name)
+            model_name = re.sub(r'[\\/*?:"<>|丨·]', "_", model_name)
             model_name = model_name.replace(" ", "")
 
-            version_name = re.sub(r'[\\/*?:"<>|丨]', "_", version_name)
+            version_name = re.sub(r'[\\/*?:"<>|丨·]', "_", version_name)
             version_name = version_name.replace(" ", "")
 
             version_file_name = os.path.basename(version_file_name)
@@ -328,7 +417,7 @@ async def download(root):
 # 创建UI
 def create_ui():
     window_width = 480
-    window_height = 600
+    window_height = 620
 
     # 创建Tkinter窗口
     root = tk.Tk()
@@ -391,9 +480,11 @@ def create_ui():
     button_frame = tk.Frame(frame_middle, name="button_frame")
     button_frame.pack(pady=2)
     tree_frame = tk.Frame(frame_middle, name="tree_frame")
+    # tree_frame.configure(background='blue')
     tree_frame.pack(fill="x")
-    # button_frame2 = tk.Frame(frame_middle, name="download_button_frame")
-    # button_frame2.pack(side="bottom")
+    button_frame2 = tk.Frame(tree_frame, name="paging_frame")
+    # button_frame2.configure(background='red')
+    button_frame2.pack(side="bottom")
 
     button1 = ttk.Button(
         button_frame,
@@ -429,17 +520,28 @@ def create_ui():
     tree.column("Author", width=80)
     tree.column("Type", width=100)
     tree.column("Base", width=60)
-    tree.pack(pady=5)
+    tree.pack(pady=(5, 0))
 
-    # button_prev = ttk.Button(button_frame2, text="上一页")
+    # button_prev = ttk.Button(button_frame2, text="上一页", name="prev")
+    # button_prev.config(state=tk.DISABLED)
     # button_prev.pack(side="left", padx=2)
-    # button_next = ttk.Button(button_frame2, text="下一页")
+    # button_next = ttk.Button(button_frame2, text="下一页", name="next")
+    # button_next.config(state=tk.DISABLED)
     # button_next.pack(side="right", padx=2)
+
+    label_paging = ttk.Label(
+        button_frame2, anchor="w", text=f"共有0页，选择分页：", name="label_paging"
+    )
+    label_paging.pack(side="left", padx=2)
+    # var = tk.StringVar()
+    combo_paging = ttk.Combobox(button_frame2, width=4, name="combo_paging")
+    combo_paging["state"] = "readonly"
+    combo_paging.pack(side="right", padx=2)
 
     label_msg = ttk.Label(
         frame_bottom, text="", anchor="w", foreground="green", name="label_msg"
     )
-    label_msg.pack(side="left", fill="x", padx=10, expand=True)
+    label_msg.pack(side="left", fill="x", padx=10, pady=5, expand=True)
 
     # 创建进度条
     global global_progress_var
@@ -447,7 +549,11 @@ def create_ui():
     progress_bar = ttk.Progressbar(
         frame_bottom, variable=global_progress_var, maximum=100, name="progress_bar"
     )
-    progress_bar.pack(side="right", fill="x", padx=(0, 10), expand=True)
+    progress_bar.pack(side="right", fill="x", padx=(0, 10), pady=5, expand=True)
+
+    # global current_page
+    # current_page = tk.IntVar()
+    # current_page.set(1)  # 设置初始页码为1
 
     return root
 
