@@ -91,7 +91,7 @@ def query_data_task(combobox_vars, root, page=1, page_size=100):
             params.append(f"%{selected_tag}%")
             
     if contain_text != "":
-        conditions.append("model.name LIKE ? OR model.author LIKE ?")
+        conditions.append("(model.name LIKE ? OR model.author LIKE ?)")
         params.append(f"%{contain_text}%")
         params.append(f"%{contain_text}%")
 
